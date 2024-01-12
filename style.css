@@ -37,12 +37,12 @@ h2 {
 }
 
 
-body {
+/*body {
   position: fixed;
 /*  top: 50%; */
-/*  left: 50%; */
+/*  left: 50%; 
   transform: translate(-50%, -50%); /* Center the container */
-}
+}*/
 
 /* Additional styling for specific sections and elements */
 /* ... */

@@ -52,5 +52,9 @@ ul li {
 }
 
 
+p {
+  text-align: justify;
+}
+
 /* Additional styling for specific sections and elements */
 /* ... */

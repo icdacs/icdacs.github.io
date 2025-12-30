@@ -1,157 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DACS 2025</title>
-  <link rel="stylesheet" href="style.css">
-</head> 
-<body>
-  <header>
-    <h1>8<sup>th</sup> International Conference on Data Analytics and Cyber Security (DACS 2025)</h1>
-    <h2>December 21-23, 2025</h2>
-    <h2>Amaravati, India</h2>
-    <h2><a href="https://srmap.edu.in/"><u>SRM University-AP, Andhra Pradesh</u></a></h2>
-      
-    
-<!---     <div class="banner">
-        <img src="IIMBG_LOGO.png" width="50%" height="50%" style="display: block; margin-left: auto; margin-right: auto;">
-    </div>    --->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DACS 2025 | Previous Editions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e40af; 
+            --accent: #4f46e5; 
+            --bg-light: #f8fafc; 
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-dim: #64748b;
+            --header-gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
 
-    
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-light); 
+            color: var(--text-main); 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Header & Nav --- */
+        header {
+            background: var(--header-gradient);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 { font-size: clamp(1.5rem, 4vw, 2.5rem); margin-bottom: 15px; }
+        header h2 { font-size: 1.1rem; font-weight: 400; color: #93c5fd; margin-bottom: 5px; }
+        header a { color: white; text-decoration: none; border-bottom: 1px solid #93c5fd; }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a button {
+            background: #ffffff;
+            color: var(--text-main);
+            border: 1px solid #cbd5e1;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        nav a button:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* --- Main Content --- */
+        main { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+
+        section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 { 
+            color: var(--primary); 
+            margin-bottom: 25px; 
+            font-size: 1.8rem; 
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        .edition-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .edition-list li {
+            font-family: 'Courier New', Courier, monospace;
+            background: #f1f5f9;
+            margin-bottom: 12px;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            color: #334155;
+            font-size: 15px;
+        }
+
+        .banner-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .banner-box img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: #1e293b;
+            color: #f8fafc;
+            margin-top: 60px;
+        }
+
+        .sponsors { width: 100%; max-width: 600px; margin: 0 auto 30px; }
+        .sponsor img { filter: brightness(0) invert(1); opacity: 0.6; width: 80px; }
+
+        @media (max-width: 768px) {
+            header { padding: 40px 15px; }
+            section { padding: 25px; }
+        }
+    </style>
+</head>
+<body id="home">
+
+    <header>
+        <h1>8<sup>th</sup> International Conference on Data Analytics and Cyber Security (DACS 2025)</h1>
+        <h2>December 21-23, 2025</h2>
+        <h2>Amaravati, India</h2>
+        <h2><a href="https://srmap.edu.in/" target="_blank"><u>SRM University-AP, Andhra Pradesh</u></a></h2>
+    </header>
+
     <nav>
-      <ul>
-        <li><a href="#home"><button>Home</button></a></li>
-        <li><a href="OrgCommittee.html"><button>Organizing Committee</button></a></li>
-        <li><a href="cfp.html"><button>Call for Papers</button></a></li>
-<!---        <li><a href="#PC"><button>Program Committee</button></a></li> --->
-        <li><a href="Submission.html"><button>Submission</button></a></li>
-        <li><a href="Registration.html"><button>Registration</button></a></li>
-        <li><a href="camera-ready.html"><button>Camera-Ready</button></a></li>
-        <li><a href="prev.html"><button>Previous Editons</button></a></li>
-        <li><a href="#venue"><button>Venue</button></a></li>
-        <li><a href="#contact"><button>Contact</button></a></li>        
-      </ul>
+        <ul>
+            <li><a href="#home"><button>Home</button></a></li>
+            <li><a href="#history"><button>Previous Editions</button></a></li>
+            <li><a href="#host"><button>Host Institute</button></a></li>
+        </ul>
     </nav>
-  </header>
 
-  <main>
-    <section id="home">
-<h2><font color="red"> Recent Updates: </font></h2>
-<h3><center><font color="red"> <u>7th DACS 2024 Proceedings: </u></font><a href="https://link.springer.com/book/9789819526796"><font color="blue">[<u>LINK</u>]</font></a></center></h3>
-<h3><center><font color="red"> <u>Please refer to the following link for the 7th DACS 2024 updates: </u></font><a href="https://icdacs.github.io/2024.html"><font color="blue">[<u>LINK</u>]</font></a></center></h3>
-<h3><center><font color="red"> <u>Please refer to the following link for the 8th DACS 2025 Paper Presentation Schedule: </u></font><a href="https://drive.google.com/file/d/1QQcjlaW7WHvcsUTE2yYIFz3kYC-__Bhx/view?usp=sharing"><font color="blue">[<u>LINK</u>]</font></a></center></h3>
-    
-      <p>The digital age has forged two vital weapons for navigating its vast information seas: data analytics and cyber security. Data analytics empowers organizations to dive deep into vast datasets, extracting valuable insights that drive informed decisions, optimize operations, and unlock competitive advantages. From healthcare to finance, data analysis fuels innovation, boosting efficiency, customer satisfaction, and the overall digital landscape. Cyber security, the silent guardian, stands watch over the digital world's critical infrastructure and sensitive data. As our digital reliance grows, protecting financial transactions, national security, and personal information becomes paramount. Cyber professionals wield advanced tools like encryption and intrusion detection to combat evolving threats and maintain the integrity of digital systems. </p>
-     
-      <p>These fields are not solitary sentinels, but interdependent allies. Data analytics illuminates vulnerabilities, identifies threats, and supports incident response, empowering cyber security. Cyber security, in turn, safeguards data and ensures the insights derived are reliable and trustworthy. As the digital world evolves, both data insights and cyber defense will adapt. Data analysis will leverage AI and machine learning for even deeper, actionable insights, while cyber security will embrace new technologies to combat emerging threats and preserve the integrity of our digital future. This symbiotic relationship is crucial for navigating the ever-changing digital landscape and ensuring a secure and prosperous future. </p>
-    
-      <p> The 7<sup>th</sup> edition of the International Conference on Data Analytics and Cyber Security (DACS) aims to bring together researchers, practitioners, and industry experts from around the globe to explore the latest advancements and emerging trends in these two interconnected fields. The conference will provide a platform for sharing cutting-edge research, discussing real-world challenges, and fostering collaborations that will shape the future of data analytics and cyber security. </p>
+    <main>
+        <section id="history">
+            <h2>Previous Editions of DACS</h2>
+            <p style="margin-bottom: 20px;">
+                In today's data-driven world, data analytics and cyber security are two of the most critical fields of study. Data analytics plays a vital role in extracting valuable insights from large and complex datasets, enabling organizations to make informed decisions, optimize operations, and gain a competitive edge. On the other hand, cyber security is paramount in protecting sensitive data and critical infrastructure from cyberattacks, ensuring the integrity, confidentiality, and availability of information systems.
+            </p>
 
-<h2>Important Dates</h2>
+            <p>
+                The DACS 2025 conference is the 8th edition and the 2nd as an independent conference. The conference in the previous year (7th DACS-2024) was held at IIM Bodh Gaya, India. Prior to becoming an independent event, this conference was conducted as an International Symposium in conjunction with top-tier conferences. The specific details of these earlier versions are as follows:
+            </p>
 
+            <ul class="edition-list">
+                <li>The 7th DACS 2024 was held in IIM Bodh Gaya, India.</li>
+                <li>International Workshop on Artificial Intelligence for Intelligent Network Management (the 5th AINet 2022 and the 6th AINet 2023), both held in Torino, Italy, in conjunction with IEEE COMPSAC.</li>
+                <li>The 4th AINet 2021, held in Torino, Italy, in conjunction with IEEE ISPA.</li>
+                <li>International Symposium on Security, Privacy, and Trust in the Internet of Things (1st SPTIoT 2017 in Sydney, Australia; 2nd SPTIoT 2018 in New York, USA; and 3rd SPTIoT 2019 in Rotorua, New Zealand) in conjunction with IEEE TrustCom.</li>
+            </ul>
+        </section>
 
-<h3>Fast Track Submissions <font color="red">[Submission Closed]</font></h3>
-<ul>
-  <li> Paper submission due: <b>October 10, 2025 </b></li>
-  <li> Author notification: <b>November 05, 2025 </b> </li>  
-</ul> 
+        <section id="host" class="banner-box">
+            <h3 style="margin-bottom: 20px; color: var(--text-dim); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">Host Institution</h3>
+            <img src="SRM-AP_LogoV2.png" alt="SRM-AP Logo">
+        </section>
+    </main>
 
-<h3>Regular Submission <font color="red">[Review Completed]</font></h3>      
-<ul>
-  <li> Paper submission due: <b><strike>September 05, 2025 </strike> September 25, 2025  <font color="red">[EXTENDED DEADLINE]</font>  </b></li>
-  <li> Author notification:  <b><strike>September 05, 2025 </strike> October 25, 2025  <font color="red">[EXTENDED DEADLINE]</font>  </b></li>
-  <li> Registration due: <b><strike>October 15, 2025 </strike> October 31, 2025  <font color="red">[EXTENDED DEADLINE]</font>  </b></li>
-  <li> Camera Ready due: <b><strike>October 15, 2025 </strike> November 05, 2025  <font color="red">[EXTENDED DEADLINE]</font>  </b></li>
- </ul> 
-      
-</section>
+    <footer>
+        <table class="sponsors">
+            <tr>
+                <td class="sponsor"><img src="assets/kitten1.jpg" alt="Sponsor 1"></td>
+                <td class="sponsor"><img src="assets/kitten2.jpg" alt="Sponsor 2"></td>
+                <td class="sponsor"><img src="assets/kitten3.jpg" alt="Sponsor 3"></td>
+            </tr>
+        </table>
+        <p>&copy; 2025 Conference Organizers | DACS Archive</p>
+        <p style="margin-top:10px;">
+            <a href="#" style="color:#94a3b8; margin: 0 10px;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color:#94a3b8; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+        </p>
+    </footer>
 
-<section id="OC">
-<h2>Conference Proceedings Publication</h2> 
-  <figure>
-    <img src="Logo_Springer.png" width="30%" height="30%">
-  </figure>
- <h4><a href=" https://www.springer.com/series/7818"><font color="blue"><u> Lecture Notes in Electrical Engineering (LNEE)</u></font></a>  – SCOPUS Indexed</h4> 
-
-<h2>Journal Publication (Extended Version)  </h2> 
-
-<p>Selected conference papers will be invited to submit an extended version for consideration in the following journal’s special issue.</p>
-<ul>
-  <li> <b>Springer Nature Computer Science Journal (Q1)</b> </li>
-  <li> <b>Wiley Security and Privacy journal (IF: 1.5)</b> </li>
-  <li> <b>Elsevier Alexandria Engineering Journal (IF: 6.2)</b> </li>
-</ul>      
-
-</section>
-    
-<!---    <section id="OC">   
-<h2>Convener </h2>    
-<p> <b>Deepak Puthal</b> & <b>Samant Saurabh</b>, IIM Bodh Gaya, India</p>   --->
-
-      </section>
-
-    <section id="venue">
-<h2>Venue</h2>
-            <p>Department of Computer Science and Engineering</p>
-            <p><a href="https://srmap.edu.in/"><font color="blue"><u>SRM University-AP, India</u></font></a></p>  
-      
-
-      </section>
-
-
-    <section id="convenor">
-<h2>Convenor</h2>
-            <p>Dr Sambit Kumar Mishra, SRM University-AP, India</p> 
-      
-
-      </section>
-
-    
-    <section id="contact">
-<h2>Contact</h2>
-      <p>Dr Sambit Kumar Mishra (PhD)</p>      
-      <p>Email: sambitkumar.m@srmap.edu.in</p>
-
-      </section>
-
-
-
-  <section id="host">
-    <div class="banner">
-        <img src="SRM-AP_LogoV2.png" width="70%" height="30%" style="display: block; margin-left: auto; margin-right: auto;">
-    </div>
-  </section>
-    
-    
-    
-  </main>
-
-  <footer>
-      <table class="sponsors">
-        <tr>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten1.jpg" alt="First Sponsor Name">
-                </a>
-            </td>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten2.jpg" alt="Second Sponsor Name" style="width: 80%">
-                </a>
-            </td>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten3.jpg" alt="Third Sponsor Name">
-                </a>
-            </td>
-        </tr>
-    </table>
-    <p>&copy; 2024 Conference Organizers</p>
-    <p>Follow us on <a href="https://www.linkedin.com/groups/9855013/">Twitter</a> | <a href="https://www.linkedin.com/groups/9855013/">LinkedIn</a></p> 
-
-  </footer>
-  
 </body>
 </html>
-

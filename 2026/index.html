@@ -8,18 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #00d2ff;
-            --accent: #0072ff;
-            --bg-dark: #0a0f1d;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --text-main: #e0e6ed;
-            --text-dim: #94a3b8;
+            --primary: #1e40af; /* Deep Navy */
+            --accent: #4f46e5; /* Indigo */
+            --bg-light: #f8fafc; /* Slate Light */
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-dim: #64748b;
+            --header-gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: var(--bg-dark); 
+            background-color: var(--bg-light); 
             color: var(--text-main); 
             line-height: 1.6;
             overflow-x: hidden;
@@ -27,24 +28,26 @@
 
         /* --- Header & Nav --- */
         header {
-            background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+            background: var(--header-gradient);
             padding: 80px 20px;
             text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        header h1 { font-size: clamp(1.8rem, 5vw, 3rem); margin-bottom: 15px; color: white; }
-        header h2 { font-size: 1.2rem; font-weight: 400; color: var(--primary); margin-bottom: 5px; }
-        header a { color: white; text-decoration: none; border-bottom: 1px solid var(--primary); }
+        header h1 { font-size: clamp(1.8rem, 5vw, 3rem); margin-bottom: 15px; }
+        header h2 { font-size: 1.2rem; font-weight: 400; color: #93c5fd; margin-bottom: 5px; }
+        header a { color: white; text-decoration: none; border-bottom: 1px solid #93c5fd; }
 
         nav {
             position: sticky;
             top: 0;
-            background: rgba(10, 15, 29, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 15px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         nav ul {
@@ -56,21 +59,22 @@
         }
 
         nav a button {
-            background: transparent;
+            background: #ffffff;
             color: var(--text-main);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid #cbd5e1;
             padding: 8px 16px;
             border-radius: 20px;
             cursor: pointer;
             transition: 0.3s;
             font-size: 0.85rem;
+            font-weight: 500;
         }
 
         nav a button:hover {
             background: var(--primary);
-            color: black;
+            color: white;
             border-color: var(--primary);
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
         }
 
         /* --- Main Content --- */
@@ -81,26 +85,27 @@
             padding: 40px;
             border-radius: 20px;
             margin-bottom: 40px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
         }
 
         h2 { 
             color: var(--primary); 
             margin-bottom: 25px; 
             font-size: 1.8rem; 
-            border-left: 4px solid var(--primary);
+            border-left: 5px solid var(--accent);
             padding-left: 15px;
         }
 
         .update-box {
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid #ef4444;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             margin-bottom: 30px;
         }
 
-        .update-box h3 { font-size: 1rem; margin: 10px 0; }
+        .update-box h3 { font-size: 1rem; margin: 10px 0; color: #b91c1c; }
 
         /* --- Grid for Dates & Pubs --- */
         .grid-container {
@@ -110,27 +115,28 @@
         }
 
         .info-card {
-            background: rgba(255,255,255,0.03);
+            background: #f1f5f9;
             padding: 25px;
             border-radius: 15px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid #e2e8f0;
         }
 
         ul { list-style-position: inside; margin-top: 10px; }
-        li { margin-bottom: 10px; color: var(--text-dim); }
-        b { color: white; }
+        li { margin-bottom: 10px; color: var(--text-main); }
+        b { color: var(--primary); }
 
         /* --- Footer --- */
         footer {
             text-align: center;
             padding: 60px 20px;
-            background: #020617;
+            background: #1e293b;
+            color: #f8fafc;
             margin-top: 60px;
         }
 
         .sponsors { width: 100%; max-width: 600px; margin: 0 auto 30px; }
-        .sponsor img { filter: grayscale(1) invert(1); opacity: 0.6; transition: 0.3s; width: 80px; }
-        .sponsor img:hover { opacity: 1; filter: grayscale(0) invert(0); }
+        .sponsor img { filter: grayscale(1); opacity: 0.5; transition: 0.3s; width: 80px; }
+        .sponsor img:hover { opacity: 1; filter: grayscale(0); }
 
         /* --- Responsive --- */
         @media (max-width: 768px) {
@@ -166,18 +172,20 @@
     <main>
         <section id="home">
             <div class="update-box">
-                <h2 style="border:none; padding:0; margin-bottom:15px; color:#ef4444;">Recent Updates</h2>
+                <h2 style="border:none; padding:0; margin-bottom:15px; color:#b91c1c;">Recent Updates</h2>
                 <h3>The 9<sup>th</sup> edition will be hosted at IIIT Guwahati</h3>
             </div>
             
             <p>The digital age has forged two vital weapons for navigating its vast information seas: data analytics and cyber security. Data analytics empowers organizations to dive deep into vast datasets, extracting valuable insights that drive informed decisions, optimize operations, and unlock competitive advantages. From healthcare to finance, data analysis fuels innovation, boosting efficiency, customer satisfaction, and the overall digital landscape. Cyber security, the silent guardian, stands watch over the digital world's critical infrastructure and sensitive data. As our digital reliance grows, protecting financial transactions, national security, and personal information becomes paramount. Cyber professionals wield advanced tools like encryption and intrusion detection to combat evolving threats and maintain the integrity of digital systems.</p>
+            <br>
             <p>These fields are not solitary sentinels, but interdependent allies. Data analytics illuminates vulnerabilities, identifies threats, and supports incident response, empowering cyber security. Cyber security, in turn, safeguards data and ensures the insights derived are reliable and trustworthy. As the digital world evolves, both data insights and cyber defense will adapt. Data analysis will leverage AI and machine learning for even deeper, actionable insights, while cyber security will embrace new technologies to combat emerging threats and preserve the integrity of our digital future. This symbiotic relationship is crucial for navigating the ever-changing digital landscape and ensuring a secure and prosperous future.</p>
+            <br>
             <p>The 9<sup>th</sup> edition of the International Conference on Data Analytics and Cyber Security (DACS) aims to bring together researchers, practitioners, and industry experts from around the globe to explore the latest advancements and emerging trends in these two interconnected fields. The conference will provide a platform for sharing cutting-edge research, discussing real-world challenges, and fostering collaborations that will shape the future of data analytics and cyber security.</p>
 
             <h2 style="margin-top:40px;">Important Dates</h2>
             <div class="grid-container">
                 <div class="info-card">
-                    <h3 style="color:var(--primary)">Regular Submission</h3>
+                    <h3 style="color:var(--primary); margin-bottom:10px;">Regular Submission</h3>
                     <ul>
                         <li>Paper submission due: <b>September 05, 2026</b></li>
                         <li>Author notification: <b>October 25, 2026</b></li>
@@ -186,7 +194,7 @@
                     </ul>
                 </div>
                 <div class="info-card">
-                    <h3 style="color:var(--primary)">Fast Track</h3>
+                    <h3 style="color:var(--primary); margin-bottom:10px;">Fast Track</h3>
                     <ul>
                         <li>Paper submission due: <b>October 10, 2026</b></li>
                         <li>Author notification: <b>November 05, 2026</b></li>
@@ -198,13 +206,13 @@
         <section id="publications">
             <h2>Publication Partners</h2>
             <div class="grid-container">
-                <div class="info-card" style="text-align: center;">
-                    <img src="Logo_Springer.png" alt="Springer" style="width: 150px; margin-bottom: 15px;">
+                <div class="info-card" style="text-align: center; background: white;">
+                    <img src="Logo_Springer.png" alt="Springer" style="width: 150px; margin-bottom: 15px; filter: none;">
                     <h3>LNEE Series</h3>
                     <p style="font-size: 0.9rem; color: var(--text-dim);">Lecture Notes in Electrical Engineering – SCOPUS Indexed</p>
                 </div>
                 <div class="info-card">
-                    <h3>Journal Special Issues</h3>
+                    <h3 style="color:var(--primary); margin-bottom:10px;">Journal Special Issues</h3>
                     <ul>
                         <li>Springer Nature Computer Science (Q1)</li>
                         <li>Wiley Security and Privacy (IF: 1.5)</li>
@@ -234,7 +242,7 @@
             </div>
         </section>
 
-        <section id="host" style="background: white; padding: 20px;">
+        <section id="host" style="background: white; padding: 20px; border: 1px solid #e2e8f0;">
             <center><img src="IIIT_Guwahati_Logo.png" alt="IIITG Logo" style="max-width: 300px; height: auto;"></center>
         </section>
     </main>
@@ -242,15 +250,15 @@
     <footer>
         <table class="sponsors">
             <tr>
-                <td class="sponsor"><img src="assets/kitten1.jpg" alt="Sponsor 1"></td>
-                <td class="sponsor"><img src="assets/kitten2.jpg" alt="Sponsor 2"></td>
-                <td class="sponsor"><img src="assets/kitten3.jpg" alt="Sponsor 3"></td>
+                <td class="sponsor"><img src="assets/kitten1.jpg" alt="Sponsor 1" style="filter: brightness(0) invert(1);"></td>
+                <td class="sponsor"><img src="assets/kitten2.jpg" alt="Sponsor 2" style="filter: brightness(0) invert(1);"></td>
+                <td class="sponsor"><img src="assets/kitten3.jpg" alt="Sponsor 3" style="filter: brightness(0) invert(1);"></td>
             </tr>
         </table>
         <p>&copy; 2026 DACS Conference Organizers | IIIT Guwahati</p>
         <p style="margin-top:10px;">
-            <a href="#" style="color:var(--text-dim); margin: 0 10px;"><i class="fab fa-twitter"></i></a>
-            <a href="#" style="color:var(--text-dim); margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color:#94a3b8; margin: 0 10px;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color:#94a3b8; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
         </p>
     </footer>
 

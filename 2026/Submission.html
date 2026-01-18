@@ -1,111 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DACS 2025</title>
-  <link rel="stylesheet" href="style.css">
-</head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DACS 2026 - Submission Instructions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e40af; 
+            --accent: #4f46e5; 
+            --bg-light: #f8fafc; 
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-dim: #64748b;
+            --header-gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            --danger: #b91c1c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-light); 
+            color: var(--text-main); 
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--header-gradient);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 { font-size: clamp(1.8rem, 5vw, 3rem); margin-bottom: 15px; }
+        header h2 { font-size: 1.2rem; font-weight: 400; color: #93c5fd; margin-bottom: 5px; }
+        header a { color: white; text-decoration: none; border-bottom: 1px solid #93c5fd; }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a button {
+            background: #ffffff;
+            color: var(--text-main);
+            border: 1px solid #cbd5e1;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        nav a button:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        main { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+
+        section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 { 
+            color: var(--primary); 
+            margin-bottom: 25px; 
+            font-size: 1.8rem; 
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        .instruction-list { list-style: none; }
+        .instruction-list li { 
+            padding: 12px 0; 
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .instruction-list li b { color: var(--text-main); min-width: 180px; }
+        .instruction-list a { color: var(--accent); font-weight: 600; text-decoration: none; }
+        .instruction-list a:hover { text-decoration: underline; }
+
+        .note-box {
+            background: #fef2f2;
+            border: 1px solid #fee2e2;
+            border-left: 5px solid var(--danger);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .springer-note {
+            background: #eff6ff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #dbeafe;
+            font-size: 0.9rem;
+        }
+
+        .partner-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .highlight-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 24px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+        }
+
+        .highlight-card img { max-width: 200px; height: auto; margin-top: 15px; }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: #1e293b;
+            color: #f8fafc;
+            margin-top: 60px;
+        }
+    </style>
+</head>
 <body>
-  <header>
-    <h1>8<sup>th</sup> International Conference on Data Analytics and Cyber Security (DACS 2025)</h1>
-    <h2>December 21-23, 2025</h2>
-    <h2>Amaravati, India</h2>
-    <h2><a href="https://srmap.edu.in/"><u>SRM University-AP, Andhra Pradesh</u></a></h2>
 
+    <header>
+        <h1>9<sup>th</sup> International Conference on Data Analytics and Cyber Security (DACS 2026)</h1>
+        <h2>December 21-23, 2026</h2>
+        <h2>Guwahati, India</h2>
+        <h2><a href="https://www.iiitg.ac.in/" target="_blank">Indian Institute of Information Technology (IIIT) Guwahati</a></h2>
+    </header>
 
-<!---     <div class="banner">
-        <img src="IIMBG_LOGO.png" width="50%" height="50%" style="display: block; margin-left: auto; margin-right: auto;">
-    </div>    --->
-
-    
     <nav>
-      <ul>
-        <li><a href="index.html"><button>Home</button></a></li>
-        <li><a href="OrgCommittee.html"><button>Organizing Committee</button></a></li>
-        <li><a href="cfp.html"><button>Call for Papers</button></a></li>
-<!---        <li><a href="#PC"><button>Program Committee</button></a></li> --->
-        <li><a href="Submission.html"><button>Submission</button></a></li>
-        <li><a href="Registration.html"><button>Registration</button></a></li>
-        <li><a href="camera-ready.html"><button>Camera-Ready</button></a></li>
-        <li><a href="prev.html"><button>Previous Editons</button></a></li>
-        <li><a href="index.html#venue"><button>Venue</button></a></li>
-        <li><a href="index.html#contact"><button>Contact</button></a></li>   
-      </ul>         
+        <ul>
+            <li><a href="index.html"><button>Home</button></a></li>
+            <li><a href="OrgCommittee.html"><button>Organizing Committee</button></a></li>
+            <li><a href="cfp.html"><button>Call for Papers</button></a></li>
+            <li><a href="Submission.html"><button>Submission</button></a></li>
+            <li><a href="Registration.html"><button>Registration</button></a></li>
+            <li><a href="camera-ready.html"><button>Camera-Ready</button></a></li>
+            <li><a href="https://icdacs.github.io/"><button>Previous Editions</button></a></li>
+            <li><a href="index.html#venue"><button>Venue</button></a></li>
+            <li><a href="index.html#contact"><button>Contact</button></a></li>
+        </ul>
     </nav>
-  </header>
 
-  <main>
+    <main>
+        <section>
+            <h2>Submission Instructions</h2>
+            <ul class="instruction-list">
+                <li>
+                    <b>Submission Portal:</b>
+                    <a href="https://cmt3.research.microsoft.com/DACS2026" target="_blank">Microsoft CMT Portal</a>
+                </li>
+                <li>
+                    <b>Page Length:</b>
+                    <span>Maximum 12 Pages (Standard Springer Format)</span>
+                </li>
+                <li>
+                    <b>Publication Series:</b>
+                    <a href="https://www.springer.com/series/7818" target="_blank">Springer LNEE (SCOPUS Indexed)</a>
+                </li>
+                <li>
+                    <b>Formatting Guidelines:</b>
+                    <a href="https://www.springer.com/us/authors-editors/conference-proceedings" target="_blank">Author Instructions</a>
+                </li>
+                <li>
+                    <b>LaTeX Template:</b>
+                    <a href="https://www.overleaf.com/latex/templates/springer-nature-latex-template/myxmhdsbzkyd" target="_blank">Overleaf Template</a>
+                </li>
+                <li>
+                    <b>Word Template:</b>
+                    <a href="https://www.springer.com/gp/authors-editors/conference-proceedings/editors/word-template/19338734" target="_blank">Download .doc Template</a>
+                </li>
+            </ul>
 
-<!--- <h3><center><font color="red"> We are no longer accepting submissions. The deadline has passed.</font></center></h3> --->
-    
-<h2>Submission Instructions</h2>
+            <div class="note-box">
+                <p><strong><i class="fas fa-exclamation-triangle"></i> Important Note on Plagiarism:</strong> Ensure all content is original. Higher similarity indices or lack of proper citation may lead to immediate rejection or removal from final proceedings, even after acceptance.</p>
+            </div>
+        </section>
 
-<ul>
-  <li> <b>Submission:</b> <a href="https://cmt3.research.microsoft.com/DACS2025"><font color="blue"><u> https://cmt3.research.microsoft.com/DACS2025</u></font></a> </li> 
-  <li> <b>Page Length:</b> 12 Pages in the format </li>  
-  <li> <b>Publication:</b> <a href=" https://www.springer.com/series/7818"><font color="blue"><u> Lecture Notes in Electrical Engineering (LNEE)</u></font></a>  – SCOPUS Indexed </li>  
-  <li> <b>Format:</b> <a href="https://www.springer.com/us/authors-editors/conference-proceedings"><font color="blue"><u> https://www.springer.com/us/authors-editors/conference-proceedings</u></font></a> </li>
-  <li> <b>LaTeX Format (Overleaf):</b> <a href="https://www.overleaf.com/latex/templates/springer-nature-latex-template/myxmhdsbzkyd"><font color="blue"><u> https://www.overleaf.com/latex/templates/springer-nature-latex-template/myxmhdsbzkyd</u></font></a> </li>
-  <li> <b>MS Word Format:</b> <a href="https://www.springer.com/gp/authors-editors/conference-proceedings/editors/word-template/19338734"><font color="blue"><u> https://www.springer.com/gp/authors-editors/conference-proceedings/editors/word-template/19338734</u></font></a> </li>
-</ul>      
-<p>Conference proceedings (Accepted Papers) will be published with the Springer “Lecture Notes in Electrical Engineering” series (<a href=" https://www.springer.com/series/7818 "><font color="blue"><u>  https://www.springer.com/series/7818</u></font></a>) after a thorough review.</p>       
-<p>For review, please strictly follow the above formatting instructions to ensure your paper stays within the page limit.</p> 
+        <section>
+            <h2>Journal Publication (Extended Version)</h2>
+            <p style="margin-bottom: 20px;">Outstanding papers will be recommended for extended publication in the following indexed journals:</p>
+            <ul class="instruction-list">
+                <li><b>Springer Nature Computer Science Journal</b> <span>(Q1 Ranking)</span></li>
+                <li><b>Wiley Security and Privacy Journal</b> <span>(Impact Factor: 1.5)</span></li>
+                <li><b>Elsevier Alexandria Engineering Journal</b> <span>(Impact Factor: 6.2)</span></li>
+            </ul>
+        </section>
 
-       <br> </br>   
-<p><font color="red"> <b>Important Note on Using Published Materials:</b> Make sure you use your own materials in your paper. If you are using any published materials, please cite them properly and/or obtain necessary permissions wherever required. A higher similarity index may lead to the removal of a paper from the final proceedings, even if it has been accepted for the conference.</font></p>
+        <section id="subdet">
+            <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1rem;">Note from Springer Nature:</h3>
+            <div class="springer-note">
+                <p>“It is planned to publish the peer-reviewed and selected papers of the conference as proceedings with Springer in their prestigious <strong>“Lecture Notes in Electrical Engineering”</strong> series. Springer will conduct quality checks; only papers passing these checks will be published. Springer Nature does not charge for Non-Open Access publication. Abstracts and short papers (under 4 pages) will not be considered.”</p>
+            </div>
+        </section>
 
-    <br> </br>   
-
-<h2>Journal Publication (Extended Version)  </h2> 
-<p>Selected conference papers will be invited to submit an extended version for consideration in the following journal’s special issue.</p>
-<ul>
-  <li> <b>Springer Nature Computer Science Journal (Q1)</b> </li>
-  <li> <b>Wiley Security and Privacy journal (IF: 1.5)</b> </li>
-  <li> <b>Elsevier Alexandria Engineering Journal (IF: 6.2)</b> </li>
-</ul>      
-
-   <br> </br>    
-    
- <section id="subdet">   
-    <h5><font color="blue">Note from Springer Nature: </font></h5>
-    <p style="font-size: 0.8em;">‘It is planned to publish the peer reviewed and selected papers of conference as proceedings with Springer in their prestigious “Lecture Notes in Electrical Engineering” series (https://www.springer.com/series/7818). For detailed instructions for author and editors of conference proceedings, kindly visit the following link: https://www.springer.com/us/authors-editors/conference-proceedings. Select papers from the conference will be published by Springer as a proceedings book volume. Springer will conduct quality checks on the accepted papers and only papers that pass these checks will be published. Springer Nature does not charge any money for publication of Non-Open Access content. Abstracts/extended abstracts and short papers (less than 4 pages) are not considered for publication.’</p> 
-  </section>
-
-
-  <section id="host">
-    <div class="banner">
-        <img src="SRM-AP_LogoV2.png" width="70%" height="30%" style="display: block; margin-left: auto; margin-right: auto;">
-    </div>       
-  </section>
-
-
-  </main>
-
-  <footer>
-      <table class="sponsors">
-        <tr>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten1.jpg" alt="First Sponsor Name">
+        <div class="partner-section">
+            <div class="highlight-card">
+                <h3 style="font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; margin-bottom: 10px;">Host Institute</h3>
+                <a href="https://www.iiitg.ac.in/" target="_blank">
+                    <img src="IIITG-Logo.png" alt="IIIT Guwahati">
                 </a>
-            </td>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten2.jpg" alt="Second Sponsor Name" style="width: 80%">
+            </div>
+            
+            <div class="highlight-card">
+                <h3 style="font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; margin-bottom: 10px;">Technical Support</h3>
+                <a href="https://expertedgesolutions.github.io/" target="_blank">
+                    <img src="exedgev2.png" alt="Expert Edge Solutions">
                 </a>
-            </td>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten3.jpg" alt="Third Sponsor Name">
-                </a>
-            </td>
-        </tr>
-    </table>
-    <p>&copy; 2024 Conference Organizers</p>
-    <p>Follow us on <a href="#">Twitter</a> | <a href="#">LinkedIn</a></p> 
+            </div>
+        </div>
+    </main>
 
-  </footer>
-  
+    <footer>
+        <p>&copy; 2026 DACS Conference Organizers | IIIT Guwahati</p>
+        <p style="margin-top:10px; color: #94a3b8;">
+            <a href="#" style="color:inherit; margin:0 10px;"><i class="fab fa-twitter"></i></a> 
+            <a href="#" style="color:inherit; margin:0 10px;"><i class="fab fa-linkedin"></i></a>
+        </p>
+    </footer>
+
 </body>
 </html>

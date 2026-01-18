@@ -1,220 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DACS 2025</title>
-  <link rel="stylesheet" href="style.css">
-</head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DACS 2026 - Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e40af; 
+            --accent: #4f46e5; 
+            --bg-light: #f8fafc; 
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-dim: #64748b;
+            --header-gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-light); 
+            color: var(--text-main); 
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--header-gradient);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 { font-size: clamp(1.8rem, 5vw, 3rem); margin-bottom: 15px; }
+        header h2 { font-size: 1.2rem; font-weight: 400; color: #93c5fd; margin-bottom: 5px; }
+        header a { color: white; text-decoration: none; border-bottom: 1px solid #93c5fd; }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a button {
+            background: #ffffff;
+            color: var(--text-main);
+            border: 1px solid #cbd5e1;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        nav a button:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        main { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+
+        section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 { 
+            color: var(--primary); 
+            margin-bottom: 25px; 
+            font-size: 1.8rem; 
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        h3 { color: var(--accent); margin: 30px 0 15px 0; font-size: 1.4rem; }
+        h4 { color: var(--text-main); margin: 20px 0 10px 0; font-size: 1.1rem; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        th { background: #f1f5f9; color: var(--primary); font-weight: 700; text-align: left; }
+        th, td { padding: 12px 15px; border: 1px solid #e2e8f0; }
+        tr:nth-child(even) { background-color: #f8fafc; }
+
+        .bank-details td:first-child { font-weight: 700; width: 30%; color: var(--text-dim); }
+
+        ul { margin-left: 20px; margin-bottom: 20px; }
+        li { padding: 5px 0; }
+
+        .form-link {
+            display: inline-block;
+            background: #eff6ff;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px dashed var(--primary);
+            width: 100%;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .form-link a { color: var(--primary); font-weight: 700; text-decoration: none; }
+
+        .highlight-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 24px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+        }
+
+        .highlight-card img { max-width: 220px; height: auto; }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: #1e293b;
+            color: #f8fafc;
+            margin-top: 60px;
+        }
+    </style>
+</head>
 <body>
-  <header>
-    <h1>8<sup>th</sup> International Conference on Data Analytics and Cyber Security (DACS 2025)</h1>
-    <h2>December 21-23, 2025</h2>
-    <h2>Amaravati, India</h2>
-    <h2><a href="https://srmap.edu.in/"><u>SRM University-AP, Andhra Pradesh</u></a></h2>
 
+    <header>
+        <h1>9<sup>th</sup> International Conference on Data Analytics and Cyber Security (DACS 2026)</h1>
+        <h2>December 21-23, 2026</h2>
+        <h2>Guwahati, India</h2>
+        <h2><a href="https://www.iiitg.ac.in/" target="_blank">Indian Institute of Information Technology (IIIT) Guwahati</a></h2>
+    </header>
 
-<!---     <div class="banner">
-        <img src="IIMBG_LOGO.png" width="50%" height="50%" style="display: block; margin-left: auto; margin-right: auto;">
-    </div>    --->
-
-    
     <nav>
-      <ul>
-        <li><a href="index.html"><button>Home</button></a></li>
-        <li><a href="OrgCommittee.html"><button>Organizing Committee</button></a></li>
-        <li><a href="cfp.html"><button>Call for Papers</button></a></li>
-<!---        <li><a href="#PC"><button>Program Committee</button></a></li> --->
-        <li><a href="Submission.html"><button>Submission</button></a></li>
-        <li><a href="Registration.html"><button>Registration</button></a></li>
-        <li><a href="prev.html"><button>Previous Editons</button></a></li>
-        <li><a href="index.html#venue"><button>Venue</button></a></li>
-        <li><a href="index.html#contact"><button>Contact</button></a></li>   
-      </ul>         
+        <ul>
+            <li><a href="index.html"><button>Home</button></a></li>
+            <li><a href="OrgCommittee.html"><button>Organizing Committee</button></a></li>
+            <li><a href="cfp.html"><button>Call for Papers</button></a></li>
+            <li><a href="Submission.html"><button>Submission</button></a></li>
+            <li><a href="Registration.html"><button>Registration</button></a></li>
+            <li><a href="camera-ready.html"><button>Camera-Ready</button></a></li>
+            <li><a href="https://icdacs.github.io/"><button>Previous Editions</button></a></li>
+            <li><a href="index.html#venue"><button>Venue</button></a></li>
+            <li><a href="index.html#contact"><button>Contact</button></a></li>
+        </ul>
     </nav>
-  </header>
 
-  <main>
-<!---     <h3><center><font color="red">We are not accepting any registrations or payments at this time.</font></center></h3>--->
+    <main>
+        <section>
+            <h2>Registration Details</h2>
+            
+            <h3>Indian Author Registration</h3>
+            <h4>Registration Amount [INR (₹)]</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Author Registration</th>
+                        <th>Co-author/Non-author</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Academic/ Professionals</td>
+                        <td>₹8000</td>
+                        <td>₹2000</td>
+                    </tr>
+                    <tr>
+                        <td>Students</td>
+                        <td>₹8000</td>
+                        <td>₹2000</td>
+                    </tr>
+                    <tr>
+                        <td>Industry Professionals</td>
+                        <td>₹10000</td>
+                        <td>₹3000</td>
+                    </tr>
+                </tbody>
+            </table>
 
-<h2>Registration Details</h2>
-<h3> Indian Author Registration </h3>
-<!--- <ul>--->
-<!---   <li><b>Select the correct category from the following table to make the payment.</b>   </li>--->
-<!---   <li><a href="https://www.onlinesbi.sbi/sbicollect/icollecthome.htmxyz"><font color="blue"><u>State Bank Collect (onlinesbi.sbi)</u></font></a></li>--->
-<!---   <li> <b>Go to</b> <u>Educational Institutions</u>  </li>--->
-<!---   <li> <b>Search for</b> <u>IIM Bodhgaya</u>  </li>--->
-<!---   <li> <b>Click on</b> <u>IIM BODHGAYA</u> </li>--->
-<!---   <li> <b>Go to payment Category and select</b> <u>"DACS 2024"</u> </li>--->
-<!--- </ul>--->
+            <div style="text-align:center; margin: 30px 0; color: #cbd5e1;">-:===========================:-</div>
 
-<h4> Registration Amount [INR (₹)] </h4>
+            <h3>Non Indian Author Registration</h3>
+            <h4>Registration Amount [USD ($)]</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Author Registration</th>
+                        <th>Co-author/Non-author</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Academic/ Professionals</td>
+                        <td>$250</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>Students</td>
+                        <td>$200</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>Industry Professionals</td>
+                        <td>$300</td>
+                        <td>$100</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-<style>
-  table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
-</style>
+        <section>
+            <h2>BANK ACCOUNT DETAILS</h2>
+            <table class="bank-details">
+                <tr><td>Account Name</td><td>SRM UNIVERSITY AP -AMARAVATI</td></tr>
+                <tr><td>BRANCH NAME</td><td>MANGALAGIRI</td></tr>
+                <tr><td>BANK NAME</td><td>HDFC BANK</td></tr>
+                <tr><td>Bank Account No</td><td>50100624163309</td></tr>
+                <tr><td>IFSC CODE</td><td>HDFC0002704</td></tr>
+                <tr><td>Swift code</td><td>HDFCINBB</td></tr>
+                <tr><td>MICR</td><td>520240302</td></tr>
+                <tr><td>Branch Code</td><td>2704</td></tr>
+                <tr><td>Account Type</td><td>Saving Account</td></tr>
+                <tr><td>Branch Address</td><td>1-437, Ground Floor, Kothapeta, GT Road, Mangalagiri-522503</td></tr>
+            </table>
 
-<table>
-  <tr>
-    <th>Category</th>
-    <th> Author Registration</th>
-    <th> Co-author/Non-author</th>
-  </tr>
-  <tr>
-    <td>Academic/ Professionals</td>
-    <td>₹8000</td>
-    <td>₹2000</td>
-  </tr>
-  <tr>
-    <td>Students</td>
-    <td>₹8000</td>
-    <td>₹2000</td>    
-  </tr>
-    <tr>
-    <td>Industry Professionals</td>
-    <td>₹10000</td>
-    <td>₹3000</td>      
-  </tr>
-</table>
+            <div class="form-link">
+                <h4>After paying the registration fees, please fill out the registration form: <br>
+                <a href="https://forms.gle/m8bcVtBTbHmBx9pr9" target="_blank">Click here for Registration Form</a></h4>
+            </div>
+        </section>
 
+        <section>
+            <h3>Important Notes</h3>
+            <ul>
+                <li>Registration Fees are inclusive 18% of GST.</li>
+                <li>Registering in the wrong category will lead to the removal of the paper from the proceedings.</li>
+                <li>Registered co-authors will not receive author kits but may attend all conference sessions.</li>
+                <li>Please note that articles longer than 12 pages will be subject to a ₹500 (India-affiliated author) or $50 (International-affiliated author) per-page fee for each extra page, up to a maximum of 3 additional pages. (Maximum length: 15 pages).</li>
+            </ul>
+            <h4 style="font-style: italic; color: var(--text-dim);">Further details will be provided soon.</h4>
+        </section>
 
-<center>-:===========================:-</center>
-
-    
-<h3> Non Indian Author Registration </h3>
-<!---<ul>--->
-<!---  <li><b>Select the correct category from the following table to make the payment.</b>   </li>--->
-<!---  <li><a href="https://forms.eduqfix.com/formiimbod/addxyz"><font color="blue"><u> Registration Payment Link</u></font></a></li>--->
-<!---</ul>--->
-
-<h4> Registration Amount [USD ($)] </h4>
-
-<style>
-  table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
-</style>
-
-<table>
-  <tr>
-    <th>Category</th>
-    <th> Author Registration</th>
-    <th> Co-author/Non-author</th>
-  </tr>
-  <tr>
-    <td>Academic/ Professionals</td>
-    <td>$250</td>
-    <td>$100</td>    
-  </tr>
-  <tr>
-    <td>Students</td>
-    <td>$200</td>
-    <td>$100</td>
-  </tr>
-    <tr>
-    <td>Industry Professionals</td>
-    <td>$300</td>
-    <td>$100</td>      
-  </tr>
-</table>      
-
-<h2> BANK ACCOUNT DETAILS :- </h2> 
-<table>
-  <tr>
-    <td>Account Name</td>
-    <td>SRM UNIVERSITY AP -AMARAVATI</td>
-  </tr>
-  <tr>
-    <td>BRANCH NAME</td>
-    <td>MANGALAGIRI</td> 
-  </tr>
-  <tr>
-    <td>BANK NAME</td>
-    <td> HDFC BANK</td>
-  </tr>
-    <tr>
-    <td>Bank Account No</td>
-    <td>50100624163309</td>    
-  </tr>
-    <tr>
-    <td>IFSC CODE</td>
-    <td>HDFC0002704</td>    
-  </tr>
-    <tr>
-    <td>Swift code</td>
-    <td>HDFCINBB</td>    
-  </tr>
-    <tr>
-    <td>MICR</td>
-    <td>520240302</td>    
-  </tr>
-    <tr>
-    <td>Branch Code</td>
-    <td>2704</td>    
-  </tr>
-    <tr>
-    <td>Account Type</td>
-    <td>Saving Account</td>    
-  </tr>
-   <tr>
-    <td>Branch Address</td>
-    <td> 1-437,Ground Floor,Kothapeta, GT Road,Mangalagiri-522503</td>    
-  </tr>
-</table> 
-    
- <h4>After paying the registration fees, please fill out the registration form: <a href="https://forms.gle/m8bcVtBTbHmBx9pr9"><font color="blue"><u> https://forms.gle/m8bcVtBTbHmBx9pr9</u></font></a></h4>   
-
-<h3> Important Notes </h3>
-
-<ul>
-  <li>Registration Fees are inclusive 18% of GST.</li>
-  <li>Registering in the wrong category will lead to the removal of the paper from the proceedings.</li>
-  <li>Registered co-authors will not receive author kits but may attend all conference sessions.</li>
-  <li>Please note that articles longer than 12 pages will be subject to a ₹500 (India-affiliated author) or $50 (International-affiliated author) per-page fee for each extra page, up to a maximum of 3 additional pages. This means the maximum allowed length for articles is 15 pages.</li>
-</ul>
-
-    
-<h4>Further details will be provided soon.</h4>    
-
-  <br> </br> 
-
-  <section id="host">
-    <div class="banner">
-        <img src="SRM-AP_LogoV2.png" width="70%" height="30%" style="display: block; margin-left: auto; margin-right: auto;">
-    </div>       
-  </section>
-
-
-  </main>
-
-  <footer>
-      <table class="sponsors">
-        <tr>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten1.jpg" alt="First Sponsor Name">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 50px;">
+            <div class="highlight-card">
+                <h3 style="font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; margin-bottom: 10px;">Host Institute</h3>
+                <a href="https://www.iiitg.ac.in/" target="_blank">
+                    <img src="IIITG-Logo.png" alt="IIIT Guwahati">
                 </a>
-            </td>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten2.jpg" alt="Second Sponsor Name" style="width: 80%">
+            </div>
+            <div class="highlight-card">
+                <h3 style="font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; margin-bottom: 10px;">Technical Support</h3>
+                <a href="https://expertedgesolutions.github.io/" target="_blank">
+                    <img src="exedgev2.png" alt="Expert Edge Solutions">
                 </a>
-            </td>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten3.jpg" alt="Third Sponsor Name">
-                </a>
-            </td>
-        </tr>
-    </table>
-    <p>&copy; 2024 Conference Organizers</p>
-    <p>Follow us on <a href="#">Twitter</a> | <a href="#">LinkedIn</a></p> 
+            </div>
+        </div>
+    </main>
 
-  </footer>
-  
+    <footer>
+        <p>&copy; 2026 DACS Conference Organizers | IIIT Guwahati</p>
+        <p style="margin-top:10px; color: #94a3b8;">
+            <i class="fab fa-twitter" style="margin: 0 10px;"></i> 
+            <i class="fab fa-linkedin" style="margin: 0 10px;"></i>
+        </p>
+    </footer>
+
 </body>
 </html>

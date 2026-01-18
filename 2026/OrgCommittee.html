@@ -23,7 +23,6 @@
             background-color: var(--bg-light); 
             color: var(--text-main); 
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         header {
@@ -99,14 +98,33 @@
             font-size: 1.2rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         ul { list-style: none; margin-bottom: 20px; }
-        li { padding: 5px 0; border-bottom: 1px solid #f1f5f9; }
+        li { padding: 8px 0; border-bottom: 1px solid #f1f5f9; }
         li:last-child { border-bottom: none; }
 
-        /* Partner/Footer Cards */
+        /* Steering Committee Link Style */
+        .sc-link-box {
+            background: #eff6ff;
+            border: 2px dashed var(--primary);
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .sc-link-box a {
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .sc-link-box a:hover {
+            text-decoration: underline;
+        }
+
         .partner-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -119,14 +137,8 @@
             padding: 30px;
             border-radius: 24px;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            transition: all 0.4s ease;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.05);
+            position: relative;
         }
 
         .highlight-card::before {
@@ -136,8 +148,7 @@
             background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
         }
 
-        .highlight-card h3 { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 20px; }
-        .highlight-card img { max-width: 220px; height: auto; }
+        .highlight-card img { max-width: 200px; height: auto; margin-top: 15px; }
 
         footer {
             text-align: center;
@@ -145,10 +156,6 @@
             background: #1e293b;
             color: #f8fafc;
             margin-top: 60px;
-        }
-
-        @media (max-width: 768px) {
-            .partner-section { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -168,13 +175,21 @@
             <li><a href="cfp.html"><button>Call for Papers</button></a></li>
             <li><a href="Submission.html"><button>Submission</button></a></li>
             <li><a href="Registration.html"><button>Registration</button></a></li>
-            <li><a href="prev.html"><button>Previous Editons</button></a></li>
+            <li><a href="https://icdacs.github.io/"><button>Previous Editions</button></a></li>
             <li><a href="index.html#venue"><button>Venue</button></a></li>
             <li><a href="index.html#contact"><button>Contact</button></a></li>
         </ul>
     </nav>
 
     <main>
+        <section>
+            <h2>Steering Committee</h2>
+            <div class="sc-link-box">
+                <i class="fas fa-users-cog" style="color: var(--primary); margin-right: 10px;"></i>
+                <a href="https://icdacs.github.io/sc.html" target="_blank">View Steering Committee Members</a>
+            </div>
+        </section>
+
         <section id="committee">
             <h2>Organizing Committee</h2>
             
@@ -208,16 +223,12 @@
             <div class="partner-section">
                 <div class="highlight-card">
                     <h3>Host Institute</h3>
-                    <a href="https://www.iiitg.ac.in/" target="_blank">
-                        <img src="IIITG-Logo.png" alt="IIIT Guwahati Logo">
-                    </a>
+                    <img src="IIITG-Logo.png" alt="IIIT Guwahati Logo">
                 </div>
                 
                 <div class="highlight-card">
                     <h3>Technical Support</h3>
-                    <a href="https://expertedgesolutions.github.io/" target="_blank">
-                        <img src="exedgev2.png" alt="Expert Edge Solutions Logo">
-                    </a>
+                    <img src="exedgev2.png" alt="Expert Edge Solutions Logo">
                 </div>
             </div>
         </section>
@@ -226,7 +237,7 @@
     <footer>
         <p>&copy; 2026 DACS Conference Organizers | IIIT Guwahati</p>
         <p style="margin-top:10px; color: #94a3b8;">
-            Follow us: <i class="fab fa-twitter" style="margin: 0 10px;"></i> <i class="fab fa-linkedin"></i>
+            <i class="fab fa-twitter" style="margin: 0 10px;"></i> <i class="fab fa-linkedin"></i>
         </p>
     </footer>
 

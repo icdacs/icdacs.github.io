@@ -111,6 +111,39 @@
             font-size: 15px;
         }
 
+        /* --- Steering Committee Grid Style --- */
+        .committee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .committee-member {
+            background: #f8fafc;
+            padding: 15px 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .committee-member:hover {
+            border-color: var(--accent);
+            background: #fff;
+            transform: translateX(5px);
+        }
+
+        .committee-member i {
+            color: var(--primary);
+            margin-right: 15px;
+            font-size: 1.1rem;
+        }
+
+        .member-info b { color: var(--text-main); }
+        .member-info span { color: var(--text-dim); font-size: 0.9rem; display: block; }
+
         /* --- Flashy Partner Card --- */
         .partner-card-wrapper {
             margin-top: 50px;
@@ -154,7 +187,7 @@
         }
 
         .highlight-card h3 {
-            margin-bottom: 20px;
+            margin-bottom: 200px;
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 3px;
@@ -177,12 +210,10 @@
             margin-top: 60px;
         }
 
-        .sponsors { width: 100%; max-width: 600px; margin: 0 auto 30px; }
-        .sponsor img { filter: brightness(0) invert(1); opacity: 0.6; width: 80px; }
-
         @media (max-width: 768px) {
             header { padding: 40px 15px; }
             section { padding: 25px; }
+            .committee-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -191,7 +222,6 @@
     <header>
         <h1>International Conference on Data Analytics and Cyber Security (DACS)</h1>
     </header>
-
 
     <main>
         <section id="history">
@@ -214,6 +244,41 @@
             </ul>
         </section>
 
+        <section id="steering-committee">
+            <h2>Steering Committee</h2>
+            <div class="committee-grid">
+                <div class="committee-member">
+                    <i class="fas fa-user-tie"></i>
+                    <div class="member-info"><b>Amit Kumar Mishra</b><span>University West, Sweden</span></div>
+                </div>
+                <div class="committee-member">
+                    <i class="fas fa-user-tie"></i>
+                    <div class="member-info"><b>Antonella Longo</b><span>University of Salento, Italy</span></div>
+                </div>
+                <div class="committee-member" style="border-left: 4px solid var(--accent);">
+                    <i class="fas fa-crown"></i>
+                    <div class="member-info"><b>Deepak Puthal [Chair]</b><span>United Arab Emirates University</span></div>
+                </div>
+                <div class="committee-member">
+                    <i class="fas fa-user-tie"></i>
+                    <div class="member-info"><b>Pradip Sharma</b><span>University of Aberdeen, UK</span></div>
+                </div>
+                <div class="committee-member">
+                    <i class="fas fa-user-tie"></i>
+                    <div class="member-info"><b>Sambit Kumar Mishra</b><span>SRM University-AP, India</span></div>
+                </div>
+                <div class="committee-member">
+                    <i class="fas fa-user-tie"></i>
+                    <div class="member-info"><b>Saraju P. Mohanty</b><span>University of North Texas, USA</span></div>
+                </div>
+                <div class="committee-member">
+                    <i class="fas fa-user-tie"></i>
+                    <div class="member-info"><b>Xuyun Zhang</b><span>Macquarie University, Australia</span></div>
+                </div>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 20px; font-style: italic;">*The above names are in alphabetical order.</p>
+        </section>
+
         <div class="partner-card-wrapper">
             <div class="highlight-card">
                 <h3>Technical Support</h3>
@@ -222,7 +287,6 @@
                 </a>
             </div>
         </div>
-
     </main>
 
     <footer>

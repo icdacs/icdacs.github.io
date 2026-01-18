@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DACS 2025 | Previous Editions</title>
+    <title>DACS | History</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -111,17 +111,61 @@
             font-size: 15px;
         }
 
-        .banner-box {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid #e2e8f0;
-            text-align: center;
+        /* --- Flashy Partner Card --- */
+        .partner-card-wrapper {
+            margin-top: 50px;
+            perspective: 1000px;
         }
 
-        .banner-box img {
-            max-width: 80%;
+        .highlight-card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+            background-size: 200% 100%;
+            animation: moveGradient 3s linear infinite;
+        }
+
+        @keyframes moveGradient {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(30, 64, 175, 0.15);
+            border-color: var(--accent);
+        }
+
+        .highlight-card h3 {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-dim);
+            font-weight: 700;
+        }
+
+        .highlight-card img {
+            max-width: 280px;
             height: auto;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.08));
         }
 
         /* --- Footer --- */
@@ -148,6 +192,20 @@
         <h1>International Conference on Data Analytics and Cyber Security (DACS)</h1>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="index.html"><button>Home</button></a></li>
+            <li><a href="OrgCommittee.html"><button>Organizing Committee</button></a></li>
+            <li><a href="cfp.html"><button>Call for Papers</button></a></li>
+            <li><a href="Submission.html"><button>Submission</button></a></li>
+            <li><a href="Registration.html"><button>Registration</button></a></li>
+            <li><a href="camera-ready.html"><button>Camera-Ready</button></a></li>
+            <li><a href="prev.html"><button>Previous Editions</button></a></li>
+            <li><a href="index.html#venue"><button>Venue</button></a></li>
+            <li><a href="index.html#contact"><button>Contact</button></a></li>
+        </ul>
+    </nav>
+
     <main>
         <section id="history">
             <h2>DACS Introduction</h2>
@@ -169,17 +227,19 @@
             </ul>
         </section>
 
+        <div class="partner-card-wrapper">
+            <div class="highlight-card">
+                <h3>Technical Support</h3>
+                <a href="https://expertedgesolutions.github.io/" target="_blank">
+                    <img src="exedgev2.png" alt="Expert Edge Solutions Logo">
+                </a>
+            </div>
+        </div>
+
     </main>
 
     <footer>
-        <table class="sponsors">
-            <tr>
-                <td class="sponsor"><img src="assets/kitten1.jpg" alt="Sponsor 1"></td>
-                <td class="sponsor"><img src="assets/kitten2.jpg" alt="Sponsor 2"></td>
-                <td class="sponsor"><img src="assets/kitten3.jpg" alt="Sponsor 3"></td>
-            </tr>
-        </table>
-        <p>&copy; 2025 Conference Organizers | DACS Archive</p>
+        <p>&copy; Conference Organizers | DACS Archive</p>
         <p style="margin-top:10px;">
             <a href="#" style="color:#94a3b8; margin: 0 10px;"><i class="fab fa-twitter"></i></a>
             <a href="#" style="color:#94a3b8; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>

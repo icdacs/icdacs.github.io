@@ -1,172 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DACS 2025</title>
-  <link rel="stylesheet" href="style.css">
-</head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DACS 2026 - Call for Papers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e40af; 
+            --accent: #4f46e5; 
+            --bg-light: #f8fafc; 
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-dim: #64748b;
+            --header-gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            --danger: #b91c1c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-light); 
+            color: var(--text-main); 
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--header-gradient);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 { font-size: clamp(1.8rem, 5vw, 3rem); margin-bottom: 15px; }
+        header h2 { font-size: 1.2rem; font-weight: 400; color: #93c5fd; margin-bottom: 5px; }
+        header a { color: white; text-decoration: none; border-bottom: 1px solid #93c5fd; }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a button {
+            background: #ffffff;
+            color: var(--text-main);
+            border: 1px solid #cbd5e1;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        nav a button:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        main { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+
+        section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 { 
+            color: var(--primary); 
+            margin-bottom: 25px; 
+            font-size: 1.8rem; 
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        h3 { color: var(--primary); margin: 20px 0 10px 0; font-size: 1.4rem; }
+        h4 { color: var(--accent); margin: 25px 0 10px 0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .status-tag {
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-left: 10px;
+        }
+        .closed { background: #fee2e2; color: #b91c1c; }
+        .completed { background: #ecfdf5; color: #047857; }
+
+        .date-list, .track-list { list-style: none; margin-bottom: 20px; }
+        .date-list li, .track-list li { 
+            padding: 8px 0; 
+            border-bottom: 1px solid #f1f5f9; 
+        }
+        .track-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        .highlight-box {
+            background: #f1f5f9;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary);
+            margin: 20px 0;
+        }
+
+        .partner-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .highlight-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 24px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+        }
+
+        .highlight-card img { max-width: 200px; height: auto; }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: #1e293b;
+            color: #f8fafc;
+            margin-top: 60px;
+        }
+    </style>
+</head>
 <body>
-  <header>
-    <h1>8<sup>th</sup> International Conference on Data Analytics and Cyber Security (DACS 2025)</h1>
-    <h2>December 21-23, 2025</h2>
-    <h2>Amaravati, India</h2>
-    <h2><a href="https://srmap.edu.in/"><u>SRM University-AP, Andhra Pradesh</u></a></h2>
 
-    
-<!---     <div class="banner">
-        <img src="IIMBG_LOGO.png" width="50%" height="50%" style="display: block; margin-left: auto; margin-right: auto;">
-    </div>    --->
-    
+    <header>
+        <h1>9<sup>th</sup> International Conference on Data Analytics and Cyber Security (DACS 2026)</h1>
+        <h2>December 21-23, 2026</h2>
+        <h2>Guwahati, India</h2>
+        <h2><a href="https://www.iiitg.ac.in/" target="_blank">Indian Institute of Information Technology (IIIT) Guwahati</a></h2>
+    </header>
+
     <nav>
-      <ul>
-        <li><a href="index.html"><button>Home</button></a></li>
-        <li><a href="OrgCommittee.html"><button>Organizing Committee</button></a></li>
-        <li><a href="cfp.html"><button>Call for Papers</button></a></li>
-<!---        <li><a href="#PC"><button>Program Committee</button></a></li> --->
-        <li><a href="Submission.html"><button>Submission</button></a></li>
-        <li><a href="Registration.html"><button>Registration</button></a></li>
-         <li><a href="camera-ready.html"><button>Camera-Ready</button></a></li>
-        <li><a href="prev.html"><button>Previous Editons</button></a></li>
-        <li><a href="index.html#venue"><button>Venue</button></a></li>
-        <li><a href="index.html#contact"><button>Contact</button></a></li>       
-      </ul>          
+        <ul>
+            <li><a href="index.html"><button>Home</button></a></li>
+            <li><a href="OrgCommittee.html"><button>Organizing Committee</button></a></li>
+            <li><a href="cfp.html"><button>Call for Papers</button></a></li>
+            <li><a href="Submission.html"><button>Submission</button></a></li>
+            <li><a href="Registration.html"><button>Registration</button></a></li>
+            <li><a href="camera-ready.html"><button>Camera-Ready</button></a></li>
+            <li><a href="https://icdacs.github.io/"><button>Previous Editions</button></a></li>
+            <li><a href="index.html#venue"><button>Venue</button></a></li>
+            <li><a href="index.html#contact"><button>Contact</button></a></li>
+        </ul>
     </nav>
-  </header>
 
-  <main>
-<h2>Important Dates</h2>
+    <main>
+        <section>
+            <h2>Important Dates</h2>
+            
+            <h3>Fast Track Submissions <span class="status-tag closed">Submission Closed</span></h3>
+            <ul class="date-list">
+                <li>Paper submission due: <b>October 10, 2026</b></li>
+                <li>Author notification: <b>November 05, 2026</b></li>
+            </ul>
 
-<h3>Fast Track Submissions <font color="red">[Submission Closed]</font></h3>
-<ul>
-   <li> Paper submission due: <b>October 10, 2025 </b></li>
-  <li> Author notification: <b>November 05, 2025 </b> </li>  
-</ul> 
+            <h3>Regular Submission <span class="status-tag completed">Review Completed</span></h3>
+            <ul class="date-list">
+                <li>Paper submission due: <strike>Sep 05</strike> <b>September 25, 2026</b> <span style="color:var(--danger)">[EXTENDED]</span></li>
+                <li>Author notification: <strike>Sep 05</strike> <b>October 25, 2026</b> <span style="color:var(--danger)">[EXTENDED]</span></li>
+                <li>Registration due: <strike>Oct 15</strike> <b>October 31, 2026</b> <span style="color:var(--danger)">[EXTENDED]</span></li>
+                <li>Camera Ready due: <strike>Oct 15</strike> <b>November 05, 2026</b> <span style="color:var(--danger)">[EXTENDED]</span></li>
+            </ul>
+        </section>
 
-<h3>Regular Submission <font color="red">[Review Completed]</font></h3>      
-<ul>
-   <li> Paper submission due: <b><strike>September 05, 2025 </strike> September 25, 2025  <font color="red">[EXTENDED DEADLINE]</font>  </b></li>
-  <li> Author notification:  <b><strike>September 05, 2025 </strike> October 25, 2025  <font color="red">[EXTENDED DEADLINE]</font>  </b></li>
-  <li> Registration due: <b><strike>October 15, 2025 </strike> October 31, 2025  <font color="red">[EXTENDED DEADLINE]</font>  </b></li>
-  <li> Camera Ready due: <b><strike>October 15, 2025 </strike> November 05, 2025  <font color="red">[EXTENDED DEADLINE]</font>  </b></li>
-</ul> 
-      
-      
+        <section>
+            <h2>Call for Papers</h2>
+            <p style="margin-bottom: 20px;">DACS invites researchers and practitioners to submit original and high-quality papers addressing themes including, but not limited to:</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px;">
+                <div>
+                    <h4>Track 1: Data Analytics</h4>
+                    <ul class="track-list">
+                        <li>Machine learning and AI for data analysis</li>
+                        <li>Big data analytics and distributed computing</li>
+                        <li>Data mining and knowledge discovery</li>
+                        <li>Data visualization and decision support</li>
+                    </ul>
 
+                    <h4>Track 2: Cyber Security</h4>
+                    <ul class="track-list">
+                        <li>Network security and intrusion detection</li>
+                        <li>Cryptography and access control</li>
+                        <li>Malware analysis and threat intelligence</li>
+                        <li>Blockchain and zero-trust models</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Track 3: Synergies & Synergies</h4>
+                    <ul class="track-list">
+                        <li>Data-Driven Threat Detection</li>
+                        <li>Behavioral Anomaly Detection</li>
+                        <li>Security Intelligence and Threat Hunting</li>
+                        <li>Privacy in data analytics</li>
+                    </ul>
 
-    
-<h2>Call for Papers</h2>
-    <p> DACS (International Conference on Data Analytics and Cyber Security) invites researchers and practitioners to submit original and high-quality papers that address the following themes, but are not limited to:</p>
-<h4>Track 1: Data Analytics  </h4> 
-<ul>
-  <li> Machine learning and artificial intelligence for data analysis </li>
-  <li> Big data analytics and distributed computing </li>  
-  <li> Data mining and knowledge discovery </li>
-  <li> Data visualization and decision support systems  </li>
-  <li> Applications of data analytics in various domains  </li>
-</ul>
-    
-<h4>Track 2: Cyber Security  </h4> 
-<ul>
-  <li> Network security and intrusion detection </li>
-  <li> Cryptography and access control </li>  
-  <li> Malware analysis and threat intelligence </li>
-  <li> Risk assessment and vulnerability management  </li>
-  <li> Cyber security in cloud computing and IoT environments </li>
-  <li> Cyber-threat intelligence and incident response </li>  
-  <li> Blockchain and distributed ledger technologies </li>
-  <li> Zero-trust security models  </li>
-  <li> Quantum cryptography and post-quantum security  </li>
-</ul>     
-    
-<h4>Track 3: Synergies in Data Analytics and Cyber Security </h4> 
-<ul>
-  <li> Data-Driven Threat Detection and Analysis </li>
-  <li> Data-driven security incident response </li>  
-  <li> Data-driven risk management </li>
-  <li> Security Intelligence and Threat Hunting  </li>
-  <li> Behavioral Anomaly Detection  </li>
-  <li> Risk Management and Vulnerability Assessment  </li>
-  <li> Security Automation and Orchestration  </li>
-  <li> Privacy considerations in data analytics for cybersecurity   </li>
-</ul>      
+                    <h4>Track 4: Emerging Technologies</h4>
+                    <ul class="track-list">
+                        <li>Large Language Models (LLM)</li>
+                        <li>Generative AI</li>
+                        <li>Internet of Things (IoT) and Edge Computing</li>
+                        <li>Quantum Computing</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-<h4>Track 4: Emerging Technologies </h4> 
-<ul>
-  <li> Artificial Intelligence and Machine Learning </li>
-  <li> Large Language Model (LLM) </li>  
-  <li> Generative AI (Artificial Intelligence) </li>
-  <li> Big Data Management and Analytics  </li>
-  <li> Cloud Computing and Distributed Systems  </li>
-  <li> Internet of Things (IoT) and Edge Computing  </li>
-  <li> Human-Computer Interaction (HCI) and User Experience  </li>
-  <li> Quantum Computing   </li>
-</ul>   
+        <section>
+            <h2>Awards & Publications</h2>
+            <div class="highlight-box">
+                <h3 style="margin-top:0">Best Paper Award</h3>
+                <p>Three awards will be presented: Best Regular Paper, Runner-up, and Best Student Paper.</p>
+            </div>
 
-    
-    
-<section id="BPA">
-<h2>Best Paper Award</h2>      
-<p> Three best paper awards will be presented at this conference: one for the best regular paper, one for the runner-up in the best regular paper category, and one for the best student paper.</p>
-<ol start="1">
-  <li> Best paper </li>
-  <li> Best paper (runner-up)</li>  
-  <li> Best student paper </li>
-</ol>
-  
-<h2>Conference Proceedings Publication  </h2> 
-    <figure>
-    <img src="Logo_Springer.png" width="30%" height="30%">
-  </figure>
-<h4><a href=" https://www.springer.com/series/7818"><font color="blue"><u> Lecture Notes in Electrical Engineering (LNEE)</u></font></a>  – SCOPUS Indexed</h4> 
+            <div style="display: flex; align-items: center; gap: 30px; margin-top: 30px; flex-wrap: wrap;">
+                <img src="Logo_Springer.png" alt="Springer" style="width: 150px;">
+                <div>
+                    <h3 style="margin:0"><a href="https://www.springer.com/series/7818" style="color:var(--primary)">LNEE Series</a></h3>
+                    <p>Lecture Notes in Electrical Engineering – <b>SCOPUS Indexed</b></p>
+                </div>
+            </div>
 
-<h2>Journal Publication (Extended Version)  </h2> 
-<p>Selected conference papers will be invited to submit an extended version for consideration in the following journal’s special issue.</p>
-<ul>
-  <li> <b>Springer Nature Computer Science Journal (Q1)</b> </li>
-  <li> <b>Wiley Security and Privacy journal (IF: 1.5)</b> </li>
-  <li> <b>Elsevier Alexandria Engineering Journal (IF: 6.2)</b> </li>
+            <h4 style="margin-top:40px;">Journal Special Issues (Extended Versions)</h4>
+            <ul class="track-list">
+                <li><b>Springer Nature Computer Science Journal (Q1)</b></li>
+                <li><b>Wiley Security and Privacy journal (IF: 1.5)</b></li>
+                <li><b>Elsevier Alexandria Engineering Journal (IF: 6.2)</b></li>
+            </ul>
+        </section>
 
-</ul>  
+        <div class="partner-section">
+            <div class="highlight-card">
+                <h3 style="font-size: 0.9rem; color: var(--text-dim); margin-bottom: 15px; text-transform: uppercase;">Host Institute</h3>
+                <img src="IIITG-Logo.png" alt="IIIT Guwahati Logo">
+            </div>
+            <div class="highlight-card">
+                <h3 style="font-size: 0.9rem; color: var(--text-dim); margin-bottom: 15px; text-transform: uppercase;">Technical Support</h3>
+                <img src="exedgev2.png" alt="Expert Edge Solutions Logo">
+            </div>
+        </div>
+    </main>
 
-</section>
+    <footer>
+        <p>&copy; 2026 DACS Conference Organizers | IIIT Guwahati</p>
+        <p style="margin-top:10px; color: #94a3b8;">
+            <i class="fab fa-twitter" style="margin: 0 10px;"></i> <i class="fab fa-linkedin" style="margin: 0 10px;"></i>
+        </p>
+    </footer>
 
-
-
-
-  <section id="host">
-    <div class="banner">
-        <img src="SRM-AP_LogoV2.png" width="70%" height="30%" style="display: block; margin-left: auto; margin-right: auto;">
-    </div>
-  </section>
-
-    
-</main>
-
-  <footer>
-      <table class="sponsors">
-        <tr>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten1.jpg" alt="First Sponsor Name">
-                </a>
-            </td>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten2.jpg" alt="Second Sponsor Name" style="width: 80%">
-                </a>
-            </td>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten3.jpg" alt="Third Sponsor Name">
-                </a>
-            </td>
-        </tr>
-    </table>
-    <p>&copy; 2024 Conference Organizers</p>
-    <p>Follow us on <a href="#">Twitter</a> | <a href="#">LinkedIn</a></p> 
-
-  </footer>
-  
 </body>
 </html>

@@ -1,101 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DACS 2025</title>
-  <link rel="stylesheet" href="style.css">
-</head> 
-<body>
-  <header>
-    <h1>8<sup>th</sup> International Conference on Data Analytics and Cyber Security (DACS 2025)</h1>
-    <h2>December 21-23, 2025</h2>
-    <h2>Amaravati, India</h2>
-    <h2><a href="https://srmap.edu.in/"><u>SRM University-AP, Andhra Pradesh</u></a></h2>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DACS | History</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e40af; 
+            --accent: #4f46e5; 
+            --bg-light: #f8fafc; 
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-dim: #64748b;
+            --header-gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-light); 
+            color: var(--text-main); 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-<!---     <div class="banner">
-        <img src="IIMBG_LOGO.png" width="50%" height="50%" style="display: block; margin-left: auto; margin-right: auto;">
-    </div>    --->
+        /* --- Header & Nav --- */
+        header {
+            background: var(--header-gradient);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
 
-    
-    <nav>
-      <ul>
-        <li><a href="index.html"><button>Home</button></a></li>
-        <li><a href="OrgCommittee.html"><button>Organizing Committee</button></a></li>
-        <li><a href="cfp.html"><button>Call for Papers</button></a></li>
-<!---        <li><a href="#PC"><button>Program Committee</button></a></li> --->
-        <li><a href="Submission.html"><button>Submission</button></a></li>
-        <li><a href="Registration1.html"><button>Registration</button></a></li>
-        <li><a href="prev.html"><button>Previous Editons</button></a></li>
-        <li><a href="index.html#venue"><button>Venue</button></a></li>
-        <li><a href="index.html#contact"><button>Contact</button></a></li>        
-      </ul>     
-    </nav>
-  </header>
+        header h1 { font-size: clamp(1.5rem, 4vw, 2.5rem); margin-bottom: 15px; }
+        header h2 { font-size: 1.1rem; font-weight: 400; color: #93c5fd; margin-bottom: 5px; }
+        header a { color: white; text-decoration: none; border-bottom: 1px solid #93c5fd; }
 
-  <main>
-<h2>Steering Committee</h2>
-<!--- <h3>Patrons</h3> --->
-<ul>
-  <li>Amit Kumar Mishra, University West, Sweden  </li>
-  <li>Antonella Longo, University of Salento, Italy  </li>
-<!---  <li>Chan Yeob Yeun, Khalifa University, UAE  </li> --->
-  <li>Deepak Puthal, IIM Bodh Gaya, India  <b>[Chair]</b></li> 
-  <li>Pradip Sharma, University of Aberdeen, UK  </li>  
-  <li>Sambit Kumar Mishra, SRM University-AP, India  </li>
-  <li>Saraju P. Mohanty, University of North Texas, USA  </li>
-  <li>Xuyun Zhang, Macquarie University, Australia  </li>
-<p style="font-family: Courier New; font-size: 15px;"> <b>*</b>The above names are in alphabetical order. </p>
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
 
- 
-</ul>      
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-      
-<section id="SC">
-<!---<h2>Program Committee </h2>  --->
-<ul>  
-<!---  <li><h3><a href="https://icdacs.github.io/ProgCommittee.html"><font color="blue"><u>LIST</u></font></a></h3></li> --->
-</ul>
-</section>
+        nav a button {
+            background: #ffffff;
+            color: var(--text-main);
+            border: 1px solid #cbd5e1;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
 
+        nav a button:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
 
+        /* --- Main Content --- */
+        main { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
 
+        section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
 
-  <section id="host">
-    <div class="banner">
-        <img src="SRM-AP_LogoV2.png" width="70%" height="30%" style="display: block; margin-left: auto; margin-right: auto;">
-    </div>
-  </section>
+        h2 { 
+            color: var(--primary); 
+            margin-bottom: 25px; 
+            font-size: 1.8rem; 
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+        }
 
-    
+        .edition-list {
+            list-style: none;
+            margin-top: 20px;
+        }
 
-</main>
+        .edition-list li {
+            font-family: 'Courier New', Courier, monospace;
+            background: #f1f5f9;
+            margin-bottom: 12px;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            color: #334155;
+            font-size: 15px;
+        }
 
-  <footer>
-      <table class="sponsors">
-        <tr>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten1.jpg" alt="First Sponsor Name">
+        /* --- Flashy Partner Card --- */
+        .partner-card-wrapper {
+            margin-top: 50px;
+            perspective: 1000px;
+        }
+
+        .highlight-card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+            background-size: 200% 100%;
+            animation: moveGradient 3s linear infinite;
+        }
+
+        @keyframes moveGradient {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(30, 64, 175, 0.15);
+            border-color: var(--accent);
+        }
+
+        .highlight-card h3 {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-dim);
+            font-weight: 700;
+        }
+
+        .highlight-card img {
+            max-width: 280px;
+            height: auto;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.08));
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: #1e293b;
+            color: #f8fafc;
+            margin-top: 60px;
+        }
+
+        .sponsors { width: 100%; max-width: 600px; margin: 0 auto 30px; }
+        .sponsor img { filter: brightness(0) invert(1); opacity: 0.6; width: 80px; }
+
+        @media (max-width: 768px) {
+            header { padding: 40px 15px; }
+            section { padding: 25px; }
+        }
+    </style>
+</head>
+<body id="home">
+
+    <header>
+        <h1>International Conference on Data Analytics and Cyber Security (DACS)</h1>
+    </header>
+
+    <main>
+        <section id="history">
+            <h2>DACS Introduction</h2>
+            <p style="margin-bottom: 20px;">
+                In today's data-driven world, data analytics and cyber security are two of the most critical fields of study. Data analytics plays a vital role in extracting valuable insights from large and complex datasets, enabling organizations to make informed decisions, optimize operations, and gain a competitive edge. On the other hand, cyber security is paramount in protecting sensitive data and critical infrastructure from cyberattacks, ensuring the integrity, confidentiality, and availability of information systems.
+            </p>
+
+            <p>
+                The DACS 2026 conference is the 9th edition and the 2nd as an independent conference. The conference in the previous year (7th DACS-2024) was held at IIM Bodh Gaya, India. Prior to becoming an independent event, this conference was conducted as an International Symposium in conjunction with top-tier conferences. The specific details of these earlier versions are as follows:
+            </p>
+
+            <ul class="edition-list">
+                <li>The 9th DACS 2026 will be at IIIT Guwahati, India.</li>
+                <li>The 8th DACS 2025 was held in SRM University-AP, India.</li>
+                <li>The 7th DACS 2024 was held in IIM Bodh Gaya, India.</li>
+                <li>International Workshop on Artificial Intelligence for Intelligent Network Management (the 5th AINet 2022 and the 6th AINet 2023), both held in Torino, Italy, in conjunction with IEEE COMPSAC.</li>
+                <li>The 4th AINet 2021, held in Torino, Italy, in conjunction with IEEE ISPA.</li>
+                <li>International Symposium on Security, Privacy, and Trust in the Internet of Things (1st SPTIoT 2017 in Sydney, Australia; 2nd SPTIoT 2018 in New York, USA; and 3rd SPTIoT 2019 in Rotorua, New Zealand) in conjunction with IEEE TrustCom.</li>
+            </ul>
+        </section>
+
+        <section id="steering-committee">
+            <h2>Steering Committee</h2>
+            <ul class="edition-list">
+                <li>Amit Kumar Mishra, University West, Sweden</li>
+                <li>Antonella Longo, University of Salento, Italy</li>
+                <li>Deepak Puthal, United Arab Emirates University <b>[Chair]</b></li>
+                <li>Pradip Sharma, University of Aberdeen, UK</li>
+                <li>Sambit Kumar Mishra, SRM University-AP, India</li>
+                <li>Saraju P. Mohanty, University of North Texas, USA</li>
+                <li>Xuyun Zhang, Macquarie University, Australia</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 10px; font-style: italic;">*The above names are in alphabetical order.</p>
+        </section>
+
+        <div class="partner-card-wrapper">
+            <div class="highlight-card">
+                <h3>Technical Support</h3>
+                <a href="https://expertedgesolutions.github.io/" target="_blank">
+                    <img src="exedgev2.png" alt="Expert Edge Solutions Logo">
                 </a>
-            </td>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten2.jpg" alt="Second Sponsor Name" style="width: 80%">
-                </a>
-            </td>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten3.jpg" alt="Third Sponsor Name">
-                </a>
-            </td>
-        </tr>
-    </table>
-    <p>&copy; 2024 Conference Organizers</p>
-    <p>Follow us on <a href="#">Twitter</a> | <a href="#">LinkedIn</a></p> 
+            </div>
+        </div>
 
-  </footer>
-  
+    </main>
+
+    <footer>
+        <p>&copy; Conference Organizers | DACS Archive</p>
+        <p style="margin-top:10px;">
+            <a href="#" style="color:#94a3b8; margin: 0 10px;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color:#94a3b8; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+        </p>
+    </footer>
+
 </body>
 </html>

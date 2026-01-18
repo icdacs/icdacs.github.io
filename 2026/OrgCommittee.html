@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DACS 2025 - Organizing Committee</title>
+    <title>DACS 2026 - Organizing Committee</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -28,14 +28,14 @@
 
         header {
             background: var(--header-gradient);
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
             color: white;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        header h1 { font-size: clamp(1.5rem, 4vw, 2.5rem); margin-bottom: 15px; }
-        header h2 { font-size: 1.1rem; font-weight: 400; color: #93c5fd; margin-bottom: 5px; }
+        header h1 { font-size: clamp(1.8rem, 5vw, 3rem); margin-bottom: 15px; }
+        header h2 { font-size: 1.2rem; font-weight: 400; color: #93c5fd; margin-bottom: 5px; }
         header a { color: white; text-decoration: none; border-bottom: 1px solid #93c5fd; }
 
         nav {
@@ -95,48 +95,49 @@
 
         h3 {
             color: var(--accent);
-            margin: 25px 0 15px 0;
-            font-size: 1.3rem;
-            font-weight: 600;
+            margin: 25px 0 10px 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        ul { list-style-type: none; }
-        li { 
-            padding: 8px 0; 
-            border-bottom: 1px solid #f1f5f9;
-            color: var(--text-main);
-        }
+        ul { list-style: none; margin-bottom: 20px; }
+        li { padding: 5px 0; border-bottom: 1px solid #f1f5f9; }
         li:last-child { border-bottom: none; }
 
-        .committee-grid {
+        /* Partner/Footer Cards */
+        .partner-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        .host-card {
+        .highlight-card {
             background: #ffffff;
-            padding: 40px;
+            padding: 30px;
             border-radius: 24px;
             text-align: center;
-            margin-top: 40px;
-            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.05);
         }
 
-        .host-card::before {
+        .highlight-card::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; height: 4px;
             background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
         }
 
-        .host-card img {
-            max-width: 300px;
-            height: auto;
-        }
+        .highlight-card h3 { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 20px; }
+        .highlight-card img { max-width: 220px; height: auto; }
 
         footer {
             text-align: center;
@@ -146,28 +147,18 @@
             margin-top: 60px;
         }
 
-        .sponsors { width: 100%; max-width: 600px; margin: 0 auto 30px; }
-        .sponsor img { filter: brightness(0) invert(1); opacity: 0.6; width: 80px; }
-
-        a.committee-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        a.committee-link:hover { text-decoration: underline; }
-
         @media (max-width: 768px) {
-            header { padding: 40px 15px; }
+            .partner-section { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>8<sup>th</sup> International Conference on Data Analytics and Cyber Security (DACS 2025)</h1>
-        <h2>December 21-23, 2025</h2>
-        <h2>Amaravati, India</h2>
-        <h2><a href="https://srmap.edu.in/" target="_blank">SRM University-AP, Andhra Pradesh</a></h2>
+        <h1>9<sup>th</sup> International Conference on Data Analytics and Cyber Security (DACS 2026)</h1>
+        <h2>December 21-23, 2026</h2>
+        <h2>Guwahati, India</h2>
+        <h2><a href="https://www.iiitg.ac.in/" target="_blank">Indian Institute of Information Technology (IIIT) Guwahati</a></h2>
     </header>
 
     <nav>
@@ -187,103 +178,55 @@
         <section id="committee">
             <h2>Organizing Committee</h2>
             
-            <div class="committee-grid">
-                <div>
-                    <h3>Patrons</h3>
-                    <ul>
-                        <li>Prof. T. R. Paarivendhar, Chancellor, SRMIST, India</li>
-                        <li>Prof. P. Sathyanarayanan, Pro-Chancellor, SRM University-AP, India</li>
-                        <li>Prof. Manoj K. Arora, Vice Chancellor, SRM University-AP, India</li>
-                    </ul>
-
-                    <h3>Honorary Chair</h3>
-                    <ul>
-                        <li>Prasant Mohapatra, University of South Florida, USA</li>
-                    </ul>
-
-                    <h3>General Chairs</h3>
-                    <ul>
-                        <li>Saraju P. Mohanty, University of North Texas, USA</li>
-                        <li>Amit Kumar Mishra, University West, Sweden</li>
-                        <li>Flavia Delicato, Fluminense Federal University, Brazil</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3>Program Chairs</h3>
-                    <ul>
-                        <li>Antonella Longo, University of Salento, Italy</li>
-                        <li>Deepak Puthal, Khalifa University, UAE</li>
-                        <li>Xuyun Zhang, Macquarie University, Australia</li>
-                        <li>Pradip Kumar Sharma, University of Aberdeen, UK</li>
-                    </ul>
-
-                    <h3>Program Co-Chairs</h3>
-                    <ul>
-                        <li>Mukesh Prasad, University of Technology Sydney, Australia</li>
-                        <li>Sambit Kumar Mishra, SRM University-AP, India</li>
-                        <li>Prasanth Yanambaka, Texas Woman's University, USA</li>
-                        <li>Mamoona Humayun, University of Roehampton, UK</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="committee-grid">
-                <div>
-                    <h3>Workshop/Special Session Chairs</h3>
-                    <ul>
-                        <li>Chan Yeob Yeun, Khalifa University, UAE</li>
-                        <li>Chi Yang, Haifa Institute of Technology, China</li>
-                        <li>Samant Saurabh, Indian Institute of Management Bodh Gaya, India</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Industry Experts</h3>
-                    <ul>
-                        <li>Arif Ahmed, Ericson Research, Sweden</li>
-                        <li>Biswapratap S. Sahoo, Nokia Standards, India</li>
-                        <li>Sahil Garg, Ultra Communications, Montreal, Canada</li>
-                        <li>Santosh Kumar Nanda, Wipro, India</li>
-                    </ul>
-                </div>
-            </div>
-
-            <h3>Publicity Chairs</h3>
-            <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0 20px;">
-                <li>Bunil Kumar Balabantaray, NIT Meghalaya, India</li>
-                <li>Diptiranjan Behera, Univ. of the West Indies, Jamaica</li>
-                <li>Joy Dutta, Khalifa University, UAE</li>
-                <li>Santosh Kumar Bharti, PDPU University, India</li>
-                <li>Prabha Sundaravadivel, Univ. of Texas at Tyler, USA</li>
-            </ul>
-        </section>
-
-        <section id="lists">
-            <h2>Additional Committees</h2>
+            <h3>Patrons</h3>
             <ul>
-                <li><h3><a href="https://icdacs.github.io/sc.html" class="committee-link">Steering Committee <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i></a></h3></li>
-                <li><h3><a href="https://icdacs.github.io/ProgCommittee.html" class="committee-link">Program Committee <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i></a></h3></li>
+                <li>Prof. T. R. Paarivendhar, Chancellor, SRMIST, India</li>
+                <li>Prof. P. Sathyanarayanan, Pro-Chancellor, SRM University-AP, India</li>
+                <li>Prof. Manoj K. Arora, Vice Chancellor, SRM University-AP, India</li>
             </ul>
-        </section>
 
-        <div class="host-card">
-            <h3 style="text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 20px;">Host Institute</h3>
-            <img src="SRM-AP_LogoV2.png" alt="SRM University-AP Logo">
-        </div>
+            <h3>Honorary Chair</h3>
+            <ul>
+                <li>Prasant Mohapatra, University of South Florida, USA</li>
+            </ul>
+
+            <h3>General Chairs</h3>
+            <ul>
+                <li>Saraju P. Mohanty, University of North Texas, USA</li>
+                <li>Amit Kumar Mishra, University West, Sweden</li>
+                <li>Flavia Delicato, Fluminense Federal University, Brazil</li>
+            </ul>
+
+            <h3>Program Chairs</h3>
+            <ul>
+                <li>Antonella Longo, University of Salento, Italy</li>
+                <li>Deepak Puthal, Khalifa University, UAE</li>
+                <li>Xuyun Zhang, Macquarie University, Australia</li>
+                <li>Pradip Kumar Sharma, University of Aberdeen, UK</li>
+            </ul>
+
+            <div class="partner-section">
+                <div class="highlight-card">
+                    <h3>Host Institute</h3>
+                    <a href="https://www.iiitg.ac.in/" target="_blank">
+                        <img src="IIITG-Logo.png" alt="IIIT Guwahati Logo">
+                    </a>
+                </div>
+                
+                <div class="highlight-card">
+                    <h3>Technical Support</h3>
+                    <a href="https://expertedgesolutions.github.io/" target="_blank">
+                        <img src="exedgev2.png" alt="Expert Edge Solutions Logo">
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <table class="sponsors">
-            <tr>
-                <td class="sponsor"><img src="assets/kitten1.jpg" alt="Sponsor 1"></td>
-                <td class="sponsor"><img src="assets/kitten2.jpg" alt="Sponsor 2"></td>
-                <td class="sponsor"><img src="assets/kitten3.jpg" alt="Sponsor 3"></td>
-            </tr>
-        </table>
-        <p>&copy; 2025 DACS Conference Organizers | SRM University-AP</p>
-        <p style="margin-top:10px;">
-            <a href="#" style="color:#94a3b8; margin: 0 10px; text-decoration: none;"><i class="fab fa-twitter"></i></a>
-            <a href="#" style="color:#94a3b8; margin: 0 10px; text-decoration: none;"><i class="fab fa-linkedin"></i></a>
+        <p>&copy; 2026 DACS Conference Organizers | IIIT Guwahati</p>
+        <p style="margin-top:10px; color: #94a3b8;">
+            Follow us: <i class="fab fa-twitter" style="margin: 0 10px;"></i> <i class="fab fa-linkedin"></i>
         </p>
     </footer>
 

@@ -1,129 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DACS 2024</title>
-  <link rel="stylesheet" href="style.css"> 
-</head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DACS 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e40af; 
+            --accent: #4f46e5; 
+            --bg-light: #f8fafc; 
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-dim: #64748b;
+            --header-gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-light); 
+            color: var(--text-main); 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: var(--header-gradient);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 { font-size: clamp(1.8rem, 5vw, 3rem); margin-bottom: 15px; }
+        header h2 { font-size: 1.2rem; font-weight: 400; color: #93c5fd; margin-bottom: 5px; }
+        header a { color: white; text-decoration: none; border-bottom: 1px solid #93c5fd; }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a button {
+            background: #ffffff;
+            color: var(--text-main);
+            border: 1px solid #cbd5e1;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        nav a button:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        main { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+
+        section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 { 
+            color: var(--primary); 
+            margin-bottom: 25px; 
+            font-size: 1.8rem; 
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        .update-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .update-box h3 { font-size: 1rem; margin: 10px 0; color: #b91c1c; }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background: #f1f5f9;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* --- Updated Partner Container for a Single Centered Element --- */
+        .partner-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        /* --- Enhanced Interactive Logo Showcase Card --- */
+        .highlight-card {
+            background: radial-gradient(circle at top left, #ffffff 0%, #f8fafc 100%);
+            padding: 50px 60px;
+            border-radius: 28px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.04), 0 5px 15px -5px rgba(0, 0, 0, 0.01);
+            overflow: hidden;
+            width: 100%;
+            max-width: 500px; /* Constrains size cleanly now that it stands alone */
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), #3b82f6, var(--primary));
+            background-size: 300% 100%;
+            animation: moveGradient 4s linear infinite;
+        }
+
+        @keyframes moveGradient {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 300% 50%; }
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 30px 60px -15px rgba(30, 64, 175, 0.18);
+            border-color: rgba(79, 70, 229, 0.4);
+        }
+
+        .highlight-card h3 {
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary);
+            font-weight: 800;
+            position: relative;
+        }
+
+        /* Animated subtle underline for the title on hover */
+        .highlight-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px; left: 50%; width: 0; height: 2px;
+            background: var(--accent);
+            transition: all 0.4s ease;
+            transform: translateX(-50%);
+        }
+
+        .highlight-card:hover h3::after {
+            width: 50%;
+        }
+
+        .highlight-card img {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.06));
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Interactive pop out effect for the logo image when container is hovered */
+        .highlight-card:hover img {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: #1e293b;
+            color: #f8fafc;
+            margin-top: 60px;
+        }
+
+        .sponsors { width: 100%; max-width: 600px; margin: 0 auto 30px; }
+        .sponsor img { filter: grayscale(1); opacity: 0.5; width: 80px; }
+
+        @media (max-width: 768px) {
+            header { padding: 40px 15px; }
+            .highlight-card { padding: 35px 30px; }
+        }
+    </style>
+</head>
 <body>
-  <header>
-    <h1>International Conference on Data Analytics and Cyber Security (DACS 2024)</h1>
-    <h2>December 20-22, 2024</h2>
-    <h2>Bodh Gaya, India</h2>
-    <h2><a href="https://iimbg.ac.in/"><u>Indian Institute of Management (IIM) Bodh Gaya</u></a></h2>
 
+    <header>
+        <h1>9<sup>th</sup> International Conference on Data Analytics and Cyber Security (DACS 2026)</h1>
+        <h2>December 21-23, 2026</h2>
+        <h2>Rourkela, India</h2>
+        <h2><a href="https://www.nitrkl.ac.in/"><u>National Institute of Technology (NIT) Rourkela</u></a></h2>
+    </header>
 
-<!---     <div class="banner">
-        <img src="IIMBG_LOGO.png" width="50%" height="50%" style="display: block; margin-left: auto; margin-right: auto;">
-    </div>    --->
-
-    
     <nav>
-      <ul>
-        <li><a href="index.html"><button>Home</button></a></li>
-        <li><a href="OrgCommittee.html"><button>Organizing Committee</button></a></li>
-        <li><a href="cfp.html"><button>Call for Papers</button></a></li>
-<!---        <li><a href="#PC"><button>Program Committee</button></a></li> --->
-        <li><a href="Submission.html"><button>Submission</button></a></li>
-        <li><a href="Registration.html"><button>Registration</button></a></li>
-        <li><a href="prev.html"><button>Previous Editons</button></a></li>
-        <li><a href="index.html#venue"><button>Venue</button></a></li>
-        <li><a href="index.html#contact"><button>Contact</button></a></li>   
-      </ul>         
+        <ul>
+            <li><a href="#home"><button>Home</button></a></li>
+            <li><a href="OrgCommittee.html"><button>Organizing Committee</button></a></li>
+            <li><a href="cfp.html"><button>Call for Papers</button></a></li>
+            <li><a href="Submission.html"><button>Submission</button></a></li>
+            <li><a href="Registration.html"><button>Registration</button></a></li>
+            <li><a href="camera-ready.html"><button>Camera-Ready</button></a></li>
+            <li><a href="https://icdacs.github.io/"><button>Previous Editons</button></a></li>
+            <li><a href="#venue"><button>Venue</button></a></li>
+            <li><a href="#contact"><button>Contact</button></a></li>
+        </ul>
     </nav>
-  </header>
 
-  <main>
+    <main>
+        <section id="home">
+            <div class="update-box">
+                <h2 style="border:none; padding:0; margin-bottom:15px; color:#b91c1c;">Recent Updates</h2>
+                <h3>The 9<sup>th</sup> edition is scheduled to be hosted in India.</h3>
+            </div>
+            
+            <p>The digital age has forged two vital weapons for navigating its vast information seas: data analytics and cyber security. Data analytics empowers organizations to dive deep into vast datasets, extracting valuable insights that drive informed decisions, optimize operations, and unlock competitive advantages. From healthcare to finance, data analysis fuels innovation, boosting efficiency, customer satisfaction, and the overall digital landscape. Cyber security, the silent guardian, stands watch over the digital world's critical infrastructure and sensitive data. As our digital reliance grows, protecting financial transactions, national security, and personal information becomes paramount. Cyber professionals wield advanced tools like encryption and intrusion detection to combat evolving threats and maintain the integrity of digital systems.</p>
+            <p>These fields are not solitary sentinels, but interdependent allies. Data analytics illuminates vulnerabilities, identifies threats, and supports incident response, empowering cyber security. Cyber security, in turn, safeguards data and ensures the insights derived are reliable and trustworthy. As the digital world evolves, both data insights and cyber defense will adapt. Data analysis will leverage AI and machine learning for even deeper, actionable insights, while cyber security will embrace new technologies to combat emerging threats and preserve the integrity of our digital future. This symbiotic relationship is crucial for navigating the ever-changing digital landscape and ensuring a secure and prosperous future.</p>
+            <p>The International Conference on Data Analytics and Cyber Security (DACS) aims to bring together researchers, practitioners, and industry experts from around the globe to explore the latest advancements and emerging trends in these two interconnected fields. The conference will provide a platform for sharing cutting-edge research, discussing real-world challenges, and fostering collaborations that will shape the future of data analytics and cyber security.</p>
 
+            <h2 style="margin-top:40px;">Important Dates</h2>
+            <div class="grid-container">
+                <div class="info-card">
+                    <h3 style="color:var(--primary); margin-bottom:10px;">Regular Submission</h3>
+                    <ul>
+                        <li>Paper submission due: <b>July 01, 2026</b></li>
+                        <li>Author notification: <b>September 15, 2026</b></li>
+                        <li>Registration due: <b>October 15, 2026</b></li>
+                        <li>Camera Ready due: <b>October 31, 2026</b></li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3 style="color:var(--primary); margin-bottom:10px;">Fast Track</h3>
+                    <ul>
+                        <li>TBA</b></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-<h2><center><font color="blue"> Hotel Bookings at Discounted Rates </font></center></h2>
+        <section id="publications">
+            <h2>Publication Partners</h2>
+            <div class="grid-container">
+                <div class="info-card" style="text-align: center; background: white;">
+                    <img src="Logo_Springer.png" alt="Springer" style="width: 150px; margin-bottom: 15px;">
+                    <h3>LNEE Series</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Lecture Notes in Electrical Engineering – SCOPUS Indexed</p>
+                </div>
+                <div class="info-card">
+                    <h3 style="color:var(--primary); margin-bottom:10px;">Journal Special Issues</h3>
+                    <ul>
+                        <li>Springer Nature Computer Science (Q1)</li>
+                        <li>Wiley Security and Privacy (IF: 1.5)</li>
+                        <li>Elsevier Alexandria Engineering Journal (IF: 6.2)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-<p>The provided prices for hotel booking are discounted rates for the DACS-2024 conference. You can directly contact the given number to book your accommodation. Be sure to mention that you are attending the IIM Bodh Gaya Conference to avail of the discounted rate. Online booking might be more expensive.</p>    
-<p>The sharing and reserve auto services are frequently available to and from IIM from the following hotels.</p>
-    
-<h4>Hotel Buddha Saalt, Bodh Gaya, India</h4>
-<ul>
-  <li> <b>Price:</b> ₹1200</li>    
-  <li> <b>Contact:</b> +91 8709759217</li>  
-  <li>Approximately 3 kilometers away from IIM.</li>    
-</ul>  
+        <section id="venue">
+            <h2>Conference Venue</h2>
+            <p>Department of Computer Science and Engineering</p>
+            <p><b>National Institute of Technology (NIT) Rourkela, Odisha, India</b></p>
+        </section>
 
+        <section id="contact">
+            <h2>Contact & Organization</h2>
+            <div class="grid-container">
+                <div>
+                    <h3 style="color:var(--primary)">Convenor</h3>
+                    <p>Dr. Bibhudatta Sahoo, NIT Rourkela, India</p>
+                </div>
+                <div>
+                    <h3 style="color:var(--primary)">Inquiries</h3>
+                    <p>Email: bdsahu@nitrkl.ac.in</p>
+                </div>
+            </div>
+        </section>
 
-
-<h4>Hotel Bodh Vilas, Bodh Gaya, India</h4>
-<ul>
-  <li> <b>Price:</b> ₹1500</li>    
-  <li> <b>Contact:</b> +91 9523688465</li>  
-  <li>Approximately 5 kilometers away from IIM.</li>    
-</ul>  
-
-    
-<h4>Hotel Jataka Inn, Bodh Gaya, India</h4>
-<ul>
-  <li> <b>Price:</b> ₹2000</li>    
-  <li> <b>Contact:</b> +91 9935028454</li>  
-  <li>Approximately 2.5 kilometers away from IIM.</li>    
-</ul>  
-
-
-
-<h4>Hotel Delta International, Bodh Gaya, India</h4>
-<ul>
-  <li> <b>Price:</b> ₹2500</li>    
-  <li> <b>Contact:</b> +91 7947125570</li>  
-  <li>Approximately 2 kilometers away from IIM.</li>    
-</ul>  
-
-
-
-<h4>Hotel Anand International Bodhgaya, Bodh Gaya, India</h4>
-<ul>
-  <li> <b>Price:</b> ₹3000</li>    
-  <li> <b>Contact:</b> +91 9155786111</li>  
-  <li>Approximately 4 kilometers away from IIM.</li>    
-</ul>  
-    
-
-
-    
-
-   <br> </br>    
-    
-  <section id="host">
-    <div class="banner">
-        <img src="IIMBG_LOGO.png" width="70%" height="70%" style="display: block; margin-left: auto; margin-right: auto;">
-    </div>       
-  </section>
-
-
-  </main>
-
-  <footer>
-      <table class="sponsors">
-        <tr>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten1.jpg" alt="First Sponsor Name">
+        <div class="partner-section">
+            <div class="highlight-card">
+                <h3>Host Institute</h3>
+                <a href="https://www.nitrkl.ac.in/" target="_blank">
+                    <img src="NITRKL-Logo_V2.png" alt="NIT Rourkela Logo">
                 </a>
-            </td>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten2.jpg" alt="Second Sponsor Name" style="width: 80%">
-                </a>
-            </td>
-            <td class="sponsor">
-                <a href="http://www.xyz.me/">
-                    <img src="assets/kitten3.jpg" alt="Third Sponsor Name">
-                </a>
-            </td>
-        </tr>
-    </table>
-    <p>&copy; 2024 Conference Organizers</p>
-    <p>Follow us on <a href="#">Twitter</a> | <a href="#">LinkedIn</a></p> 
+            </div>
+        </div>
+    </main>
 
-  </footer>
-  
+    <footer>
+        <table class="sponsors">
+            <tr>
+                <td class="sponsor"><img src="assets/kitten1.jpg" alt="Sponsor 1" style="filter: brightness(0) invert(1);"></td>
+                <td class="sponsor"><img src="assets/kitten2.jpg" alt="Sponsor 2" style="filter: brightness(0) invert(1);"></td>
+                <td class="sponsor"><img src="assets/kitten3.jpg" alt="Sponsor 3" style="filter: brightness(0) invert(1);"></td>
+            </tr>
+        </table>
+        <p>&copy; 2026 DACS Conference Organizers | NIT Rourkela</p>
+        <p style="margin-top:10px;">
+            <a href="#" style="color:#94a3b8; margin: 0 10px;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color:#94a3b8; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+        </p>
+    </footer>
+
 </body>
 </html>
-
